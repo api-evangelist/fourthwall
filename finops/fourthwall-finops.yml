@@ -1,0 +1,111 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Fourthwall
+providerId: fourthwall
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Creator Commerce
+- Ecommerce
+- Merch
+- Memberships
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Fourthwall spend. Unlike usage-metered API platforms,
+  Fourthwall does not bill for API calls - the Storefront API and Platform
+  (Open) API are free with a shop. Cost is driven by commerce: the flat base
+  cost of physical products fulfilled from Fourthwall's catalog (deducted from
+  the selling price at order time, with the creator keeping 100% of the set
+  margin), percentage fees on digital products and memberships, standard
+  payment-processing fees, and an optional flat Fourthwall Pro subscription.
+  Net creator revenue is the difference between the selling price and these
+  costs.
+notes: >-
+  Fee percentages, base costs, and the Pro price change over time; verify
+  against the Fourthwall pricing/FAQ pages during reconciliation.
+sources:
+- https://fourthwall.com/faq
+- https://docs.fourthwall.com
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Fourthwall
+serviceCategory: Commerce and Creator Economy
+billingModel:
+  pricingCategory: Usage-Based
+  billingFrequency: Per Transaction
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Fourthwall
+  ServiceCategory: Commerce and Creator Economy
+  ProviderName: Fourthwall
+  PublisherName: Fourthwall
+  InvoiceIssuerName: Fourthwall
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Usage-Based
+meters:
+- name: catalog_product_base_cost
+  description: Flat base cost of physical products fulfilled from Fourthwall's catalog, charged per item at order time.
+  unit: items
+  aggregation: sum
+  dimensions:
+  - shop
+  - product
+- name: digital_product_fee
+  description: Percentage fee on digital product sales (Free plan; waived/reduced on Pro).
+  unit: sales
+  aggregation: sum
+  dimensions:
+  - shop
+  - product
+- name: membership_fee
+  description: Percentage fee on membership subscription revenue.
+  unit: sales
+  aggregation: sum
+  dimensions:
+  - shop
+  - tier
+- name: payment_processing_fee
+  description: Standard payment-processor fee (percentage plus per-transaction flat fee).
+  unit: transactions
+  aggregation: sum
+  dimensions:
+  - shop
+- name: pro_subscription
+  description: Optional flat monthly/annual Fourthwall Pro subscription.
+  unit: subscription
+  aggregation: sum
+  dimensions:
+  - shop
+- name: api_usage
+  description: Storefront API and Platform (Open) API usage - included at no charge; tracked only against rate limits.
+  unit: requests
+  aggregation: sum
+  dimensions:
+  - shop
+  - api
+principles:
+- name: Visibility
+  description: Pull orders, donations, and payout transactions via the Platform API to reconcile base costs, fees, and net revenue per product and per shop.
+- name: Allocation
+  description: Tag revenue and costs by product, collection, and membership tier to see margin contribution by line.
+- name: Optimization
+  description: Set selling-price margins deliberately above base cost; evaluate self-sourced products (no product fee) and the Pro plan where its fee waivers exceed its subscription cost.
+- name: Accountability
+  description: Review payout transactions and per-product margins on a regular cadence against revenue targets.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

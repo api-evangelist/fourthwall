@@ -1,0 +1,1047 @@
+{
+  "info": {
+    "_postman_id": "707f679f-bb4a-47e2-b6d2-c677a8fb7553",
+    "name": "Fourthwall API",
+    "description": "Fourthwall creator commerce APIs: Storefront API (public storefront token) and Platform / Open API (shop API key via Basic Auth). Set {{storefrontToken}} for storefront requests and configure Basic Auth (username = API key) for Platform requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "id": "30aaf84c-2e9b-41af-8bee-7f935ff0ca18",
+      "name": "Storefront",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c740b2c7-234e-41d3-a79e-cc10e64df335",
+          "name": "Get shop information",
+          "request": {
+            "name": "Get shop information",
+            "description": {
+              "content": "Get shop information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/shop?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "shop"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "ccea4674-4e97-4c93-b482-55135d9c5f8a",
+          "name": "Get a product by slug",
+          "request": {
+            "name": "Get a product by slug",
+            "description": {
+              "content": "Get a product (offer) by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/products/:slug?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "products",
+                ":slug"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "a4969d55-8baa-4bb3-8cc3-96fbd0d36158",
+          "name": "Get all collections",
+          "request": {
+            "name": "Get all collections",
+            "description": {
+              "content": "Get all collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/collections?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "collections"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "32f19c5b-ba17-47c7-b80f-d7ff23798a61",
+          "name": "Get a collection",
+          "request": {
+            "name": "Get a collection",
+            "description": {
+              "content": "Get a collection by slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/collections/:slug?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "collections",
+                ":slug"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "1d012b75-b51a-493e-92c2-95f16eeae8c3",
+          "name": "Get products in a collection",
+          "request": {
+            "name": "Get products in a collection",
+            "description": {
+              "content": "Get products (offers) in a collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/collections/:slug/products?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "collections",
+                ":slug",
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "75077121-7a9b-4d24-9511-899c96742a95",
+          "name": "Create cart",
+          "request": {
+            "name": "Create cart",
+            "description": {
+              "content": "Create a cart.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/carts?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "carts"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"variantId\": \"<string>\", \"quantity\": 1 }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "7574bf33-c14f-4a04-bd6b-c2f9f1763f6e",
+          "name": "Get cart by id",
+          "request": {
+            "name": "Get cart by id",
+            "description": {
+              "content": "Get cart by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/carts/:cartId?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "carts",
+                ":cartId"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "643aa85f-f3e8-4153-9835-dee4cf0a930c",
+          "name": "Add to cart",
+          "request": {
+            "name": "Add to cart",
+            "description": {
+              "content": "Add items to a cart.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/carts/:cartId/add?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "carts",
+                ":cartId",
+                "add"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"variantId\": \"<string>\", \"quantity\": 1 }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "d277c914-0fd6-4185-a751-b6d5dfac06e0",
+          "name": "Change cart items quantity",
+          "request": {
+            "name": "Change cart items quantity",
+            "description": {
+              "content": "Change cart item quantities.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/carts/:cartId/change?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "carts",
+                ":cartId",
+                "change"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"variantId\": \"<string>\", \"quantity\": 1 }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "053ee91b-930a-4719-a163-62787a855de5",
+          "name": "Remove from cart",
+          "request": {
+            "name": "Remove from cart",
+            "description": {
+              "content": "Remove items from a cart.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://storefront-api.fourthwall.com/v1/carts/:cartId/remove?storefront_token={{storefrontToken}}",
+              "host": [
+                "https://storefront-api.fourthwall.com"
+              ],
+              "path": [
+                "v1",
+                "carts",
+                ":cartId",
+                "remove"
+              ],
+              "query": [
+                {
+                  "key": "storefront_token",
+                  "value": "{{storefrontToken}}"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"items\": [\n    { \"variantId\": \"<string>\" }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "af6fd96d-5823-4027-ba09-5b96c1802d6a",
+      "name": "Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e285cb3a-e901-4ece-8647-0908ba133eb3",
+          "name": "Get all orders",
+          "request": {
+            "name": "Get all orders",
+            "description": {
+              "content": "Get all orders.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/order",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "order"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "6fa8653b-267a-434a-9e3d-c63e35838644",
+          "name": "Get order by id",
+          "request": {
+            "name": "Get order by id",
+            "description": {
+              "content": "Get order by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/order/:orderId",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "order",
+                ":orderId"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "c3cbdbec-0996-4fdd-abe8-98ba5b833fb1",
+          "name": "Get order by friendly id",
+          "request": {
+            "name": "Get order by friendly id",
+            "description": {
+              "content": "Get order by friendly id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/order/by-friendly-id/:friendlyId",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "order",
+                "by-friendly-id",
+                ":friendlyId"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "3d7e4f45-b4f4-4392-8eff-6fef2acc07ed",
+      "name": "Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "66a3a6b4-d4ab-4eae-9220-901bdd5daf2e",
+          "name": "Get all products (offers)",
+          "request": {
+            "name": "Get all products (offers)",
+            "description": {
+              "content": "Get all products (offers).",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/products",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "products"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "24a61a1a-c48a-4325-b493-249629049593",
+          "name": "Create a product",
+          "request": {
+            "name": "Create a product",
+            "description": {
+              "content": "Create a product (offer).",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/products",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "products"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "450e06a8-91af-4572-87cc-8aa08d281ce9",
+          "name": "Get product (offer) by id",
+          "request": {
+            "name": "Get product (offer) by id",
+            "description": {
+              "content": "Get product (offer) by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/products/:productId",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "products",
+                ":productId"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "ce4bcda9-3e08-4260-afad-fa6b879e0acd",
+      "name": "Collections",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "332ad670-add8-4781-ad91-0ecf6f114eac",
+          "name": "Get all collections",
+          "request": {
+            "name": "Get all collections",
+            "description": {
+              "content": "Get all collections.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/collections",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "collections"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "31e2f6c5-80d4-4fcd-af93-b4573ba9be4c",
+          "name": "Get collection by ID or slug",
+          "request": {
+            "name": "Get collection by ID or slug",
+            "description": {
+              "content": "Get collection by ID or slug.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/collections/:collectionIdOrSlug",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "collections",
+                ":collectionIdOrSlug"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "379473f5-5f79-49ef-9c04-d6e385f366c5",
+      "name": "Promotions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "16e7d2fa-dbb9-4a93-8223-11d8a2cbaed5",
+          "name": "Get all promotions",
+          "request": {
+            "name": "Get all promotions",
+            "description": {
+              "content": "Get all promotions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/promotions",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "promotions"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "7e46c466-a4ab-4ab0-9928-7d7d603da730",
+          "name": "Create a promotion",
+          "request": {
+            "name": "Create a promotion",
+            "description": {
+              "content": "Create a promotion.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/promotions",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "promotions"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "9934f5e4-521c-4efa-9430-88dd40bde93d",
+          "name": "Get a promotion by id",
+          "request": {
+            "name": "Get a promotion by id",
+            "description": {
+              "content": "Get a promotion by id.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/promotions/:promotionId",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "promotions",
+                ":promotionId"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "857e7fe5-ec99-469c-93c7-664c0d7135ee",
+      "name": "Gifting",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c73eb7ba-067f-4500-9e48-5840dc2b65d1",
+          "name": "Get gifting config",
+          "request": {
+            "name": "Get gifting config",
+            "description": {
+              "content": "Get gifting config.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/gifting/config",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "gifting",
+                "config"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "e20959aa-b22d-4f15-9ab2-b074722dcbbc",
+          "name": "Create a gifting checkout",
+          "request": {
+            "name": "Create a gifting checkout",
+            "description": {
+              "content": "Create a gifting checkout.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/gifting/checkout",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "gifting",
+                "checkout"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "21863689-64b6-457d-a823-9f92f432a7ca",
+          "name": "Create a new giveaway",
+          "request": {
+            "name": "Create a new giveaway",
+            "description": {
+              "content": "Create a new giveaway.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/giveaways/giveaways",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "giveaways",
+                "giveaways"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "e0ea5807-85cc-4900-b2b1-0856ec901a05",
+      "name": "Memberships",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bd16829c-9005-4229-94c7-1147dd4c10e4",
+          "name": "List membership tiers",
+          "request": {
+            "name": "List membership tiers",
+            "description": {
+              "content": "List membership tiers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/memberships/tiers",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "memberships",
+                "tiers"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "547a3579-287f-49c0-a30a-de280f22a5c5",
+          "name": "List members",
+          "request": {
+            "name": "List members",
+            "description": {
+              "content": "List members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/memberships/members",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "memberships",
+                "members"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "48c3c3e2-64bc-4183-be86-bc68a2acb240",
+          "name": "Get member",
+          "request": {
+            "name": "Get member",
+            "description": {
+              "content": "Get member.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/memberships/members/:id",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "memberships",
+                "members",
+                ":id"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "id": "f06c15a1-5270-46bd-8e7e-83f19af0f944",
+      "name": "Webhooks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "785e54a9-4331-47a6-82d3-bfa5eb175d6e",
+          "name": "Get webhooks",
+          "request": {
+            "name": "Get webhooks",
+            "description": {
+              "content": "Get webhook configurations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/webhooks",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "webhooks"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "id": "1c314442-2cad-4854-a0d5-7e9ee26f4537",
+          "name": "Create a webhook",
+          "request": {
+            "name": "Create a webhook",
+            "description": {
+              "content": "Create a webhook.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/webhooks",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "webhooks"
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"https://example.com/webhook\",\n  \"allowedTypes\": [\"ORDER_PLACED\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": []
+        },
+        {
+          "id": "d3ec7059-ade1-4dc6-8bf4-4bebc8506b1e",
+          "name": "Get webhook events",
+          "request": {
+            "name": "Get webhook events",
+            "description": {
+              "content": "Get delivered webhook events.",
+              "type": "text/plain"
+            },
+            "url": {
+              "raw": "https://api.fourthwall.com/open-api/v1.0/webhook-events",
+              "host": [
+                "https://api.fourthwall.com"
+              ],
+              "path": [
+                "open-api",
+                "v1.0",
+                "webhook-events"
+              ]
+            },
+            "header": [],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "storefrontToken",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

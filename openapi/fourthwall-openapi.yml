@@ -1,0 +1,1198 @@
+openapi: 3.1.0
+info:
+  title: Fourthwall API
+  description: >-
+    Representative OpenAPI description of Fourthwall's public creator commerce
+    APIs. Fourthwall exposes two HTTP surfaces: a public Storefront API
+    (authenticated with a storefront token) for building headless shops, and a
+    Platform / Open API (authenticated with a shop API key via HTTP Basic Auth,
+    or OAuth 2.0 for multi-shop apps) for managing orders, products,
+    collections, promotions, gifting, memberships, and webhooks. This document
+    is a faithful, representative subset for cataloging; consult
+    https://docs.fourthwall.com for the complete, authoritative reference.
+  termsOfService: https://fourthwall.com/terms-of-service
+  contact:
+    name: Fourthwall
+    url: https://fourthwall.com
+  version: v1
+servers:
+  - url: https://storefront-api.fourthwall.com
+    description: Storefront API (public storefront token)
+  - url: https://api.fourthwall.com
+    description: Platform / Open API (shop API key or OAuth)
+tags:
+  - name: Storefront Products
+  - name: Storefront Collections
+  - name: Storefront Shop
+  - name: Storefront Carts
+  - name: Orders
+  - name: Products
+  - name: Collections
+  - name: Promotions
+  - name: Gifting
+  - name: Giveaways
+  - name: Memberships
+  - name: Webhooks
+paths:
+  /v1/products/{slug}:
+    get:
+      operationId: getStorefrontProduct
+      tags:
+        - Storefront Products
+      summary: Get a product by slug
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The product (offer).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /v1/collections:
+    get:
+      operationId: getStorefrontCollections
+      tags:
+        - Storefront Collections
+      summary: Get all collections
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of collections.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Collection'
+  /v1/collections/{slug}:
+    get:
+      operationId: getStorefrontCollection
+      tags:
+        - Storefront Collections
+      summary: Get a collection
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /v1/collections/{slug}/products:
+    get:
+      operationId: getStorefrontCollectionProducts
+      tags:
+        - Storefront Collections
+      summary: Get products (offers) in a collection
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Products in the collection.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+  /v1/shop:
+    get:
+      operationId: getStorefrontShop
+      tags:
+        - Storefront Shop
+      summary: Get shop information
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Shop information.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+  /v1/carts:
+    post:
+      operationId: createCart
+      tags:
+        - Storefront Carts
+      summary: Create cart
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartCreateRequest'
+      responses:
+        '200':
+          description: The created cart.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+  /v1/carts/{cartId}:
+    get:
+      operationId: getCart
+      tags:
+        - Storefront Carts
+      summary: Get cart by id
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The cart.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+  /v1/carts/{cartId}/add:
+    post:
+      operationId: addToCart
+      tags:
+        - Storefront Carts
+      summary: Add to cart
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartItemsRequest'
+      responses:
+        '200':
+          description: The updated cart.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+  /v1/carts/{cartId}/change:
+    post:
+      operationId: changeCartItems
+      tags:
+        - Storefront Carts
+      summary: Change cart items quantity
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartItemsRequest'
+      responses:
+        '200':
+          description: The updated cart.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+  /v1/carts/{cartId}/remove:
+    post:
+      operationId: removeFromCart
+      tags:
+        - Storefront Carts
+      summary: Remove from cart
+      security:
+        - storefrontToken: []
+      parameters:
+        - name: cartId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: storefront_token
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartItemsRequest'
+      responses:
+        '200':
+          description: The updated cart.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+  /open-api/v1.0/order:
+    get:
+      operationId: getOrders
+      tags:
+        - Orders
+      summary: Get all orders
+      security:
+        - basicAuth: []
+        - oauth: [order_read]
+      responses:
+        '200':
+          description: A paginated list of orders.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderList'
+  /open-api/v1.0/order/{orderId}:
+    get:
+      operationId: getOrder
+      tags:
+        - Orders
+      summary: Get order by id
+      security:
+        - basicAuth: []
+        - oauth: [order_read]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /open-api/v1.0/order/by-friendly-id/{friendlyId}:
+    get:
+      operationId: getOrderByFriendlyId
+      tags:
+        - Orders
+      summary: Get order by friendly id
+      security:
+        - basicAuth: []
+        - oauth: [order_read]
+      parameters:
+        - name: friendlyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /open-api/v1.0/order/{orderId}/downloaded:
+    put:
+      operationId: markOrderDownloaded
+      tags:
+        - Orders
+      summary: Mark digital download as downloaded
+      security:
+        - basicAuth: []
+        - oauth: [order_write]
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Updated.
+  /open-api/v1.0/products:
+    get:
+      operationId: getProducts
+      tags:
+        - Products
+      summary: Get all products (offers)
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      responses:
+        '200':
+          description: A paginated list of products.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      operationId: createProduct
+      tags:
+        - Products
+      summary: Create a product
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: The created product.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+  /open-api/v1.0/products/{productId}:
+    get:
+      operationId: getProduct
+      tags:
+        - Products
+      summary: Get product (offer) by id
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The product.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+    delete:
+      operationId: archiveProduct
+      tags:
+        - Products
+      summary: Archive a product (offer)
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Archived.
+  /open-api/v1.0/products/{productId}/inventory:
+    get:
+      operationId: getProductInventory
+      tags:
+        - Products
+      summary: Get product (offer) inventory by id
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Inventory levels.
+  /open-api/v1.0/collections:
+    get:
+      operationId: getCollections
+      tags:
+        - Collections
+      summary: Get all collections
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      responses:
+        '200':
+          description: A list of collections.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Collection'
+    post:
+      operationId: createCollection
+      tags:
+        - Collections
+      summary: Create a new collection
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: The created collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /open-api/v1.0/collections/{collectionIdOrSlug}:
+    get:
+      operationId: getCollectionByIdOrSlug
+      tags:
+        - Collections
+      summary: Get collection by ID or slug
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      parameters:
+        - name: collectionIdOrSlug
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /open-api/v1.0/collections/{collectionId}/products:
+    get:
+      operationId: getCollectionProducts
+      tags:
+        - Collections
+      summary: Get products in a collection
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      parameters:
+        - name: collectionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Products in the collection.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    put:
+      operationId: setCollectionProducts
+      tags:
+        - Collections
+      summary: Set collection products
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      parameters:
+        - name: collectionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated.
+  /open-api/v1.0/promotions:
+    get:
+      operationId: getPromotions
+      tags:
+        - Promotions
+      summary: Get all promotions
+      security:
+        - basicAuth: []
+        - oauth: [promotions_read]
+      responses:
+        '200':
+          description: A list of promotions.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Promotion'
+    post:
+      operationId: createPromotion
+      tags:
+        - Promotions
+      summary: Create a promotion
+      security:
+        - basicAuth: []
+        - oauth: [promotions_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Promotion'
+      responses:
+        '200':
+          description: The created promotion.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+  /open-api/v1.0/promotions/{promotionId}:
+    get:
+      operationId: getPromotion
+      tags:
+        - Promotions
+      summary: Get a promotion by id
+      security:
+        - basicAuth: []
+        - oauth: [promotions_read]
+      parameters:
+        - name: promotionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The promotion.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+    put:
+      operationId: updatePromotion
+      tags:
+        - Promotions
+      summary: Update a promotion
+      security:
+        - basicAuth: []
+        - oauth: [promotions_write]
+      parameters:
+        - name: promotionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Promotion'
+      responses:
+        '200':
+          description: The updated promotion.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+  /open-api/v1.0/gifting/config:
+    get:
+      operationId: getGiftingConfig
+      tags:
+        - Gifting
+      summary: Get gifting config
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      responses:
+        '200':
+          description: The gifting configuration.
+    put:
+      operationId: updateGiftingConfig
+      tags:
+        - Gifting
+      summary: Update gifting config
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Updated.
+  /open-api/v1.0/gifting/checkout:
+    post:
+      operationId: createGiftingCheckout
+      tags:
+        - Gifting
+      summary: Create a gifting checkout
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: The created gifting checkout.
+  /open-api/v1.0/gifting/draw/{id}:
+    get:
+      operationId: getGiftDraw
+      tags:
+        - Gifting
+      summary: Get draw
+      security:
+        - basicAuth: []
+        - oauth: [offer_read]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The draw.
+  /open-api/v1.0/gifting/draw/{id}/finish:
+    put:
+      operationId: finishGiftDraw
+      tags:
+        - Gifting
+      summary: Finish draw
+      security:
+        - basicAuth: []
+        - oauth: [offer_write]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Finished.
+  /open-api/v1.0/giveaways/giveaways:
+    post:
+      operationId: createGiveaway
+      tags:
+        - Giveaways
+      summary: Create a new giveaway
+      security:
+        - basicAuth: []
+        - oauth: [giveaway_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: The created giveaway.
+  /open-api/v1.0/memberships/tiers:
+    get:
+      operationId: listMembershipTiers
+      tags:
+        - Memberships
+      summary: List membership tiers
+      security:
+        - basicAuth: []
+        - oauth: [memberships_read]
+      responses:
+        '200':
+          description: A list of membership tiers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MembershipTier'
+  /open-api/v1.0/memberships/members:
+    get:
+      operationId: listMembers
+      tags:
+        - Memberships
+      summary: List members
+      security:
+        - basicAuth: []
+        - oauth: [memberships_read]
+      responses:
+        '200':
+          description: A list of members.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member'
+  /open-api/v1.0/memberships/members/{id}:
+    get:
+      operationId: getMember
+      tags:
+        - Memberships
+      summary: Get member
+      security:
+        - basicAuth: []
+        - oauth: [memberships_read]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The member.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+  /open-api/v1.0/webhooks:
+    get:
+      operationId: getWebhooks
+      tags:
+        - Webhooks
+      summary: Get webhooks
+      security:
+        - basicAuth: []
+        - oauth: [webhook_read]
+      responses:
+        '200':
+          description: A list of webhook configurations.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebhookConfiguration'
+    post:
+      operationId: createWebhook
+      tags:
+        - Webhooks
+      summary: Create a webhook
+      security:
+        - basicAuth: []
+        - oauth: [webhook_write]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookConfigurationCreateRequest'
+      responses:
+        '200':
+          description: The created webhook configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookConfiguration'
+  /open-api/v1.0/webhooks/{webhookConfigurationId}:
+    get:
+      operationId: getWebhook
+      tags:
+        - Webhooks
+      summary: Get a webhook
+      security:
+        - basicAuth: []
+        - oauth: [webhook_read]
+      parameters:
+        - name: webhookConfigurationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The webhook configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WebhookConfiguration'
+    put:
+      operationId: updateWebhook
+      tags:
+        - Webhooks
+      summary: Update a webhook
+      security:
+        - basicAuth: []
+        - oauth: [webhook_write]
+      parameters:
+        - name: webhookConfigurationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookConfigurationCreateRequest'
+      responses:
+        '200':
+          description: The updated webhook configuration.
+    delete:
+      operationId: deleteWebhook
+      tags:
+        - Webhooks
+      summary: Delete a webhook
+      security:
+        - basicAuth: []
+        - oauth: [webhook_write]
+      parameters:
+        - name: webhookConfigurationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Deleted.
+  /open-api/v1.0/webhook-events:
+    get:
+      operationId: getWebhookEvents
+      tags:
+        - Webhooks
+      summary: Get webhook events
+      security:
+        - basicAuth: []
+        - oauth: [webhook_read]
+      responses:
+        '200':
+          description: A list of delivered webhook events.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WebhookEvent'
+components:
+  securitySchemes:
+    storefrontToken:
+      type: apiKey
+      in: query
+      name: storefront_token
+      description: >-
+        Public storefront token obtained from Settings > For Developers, passed
+        as the storefront_token query parameter on Storefront API requests.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: >-
+        Shop API key used with HTTP Basic Authentication against the Platform
+        (Open) API.
+    oauth:
+      type: oauth2
+      description: OAuth 2.0 for multi-shop platform apps.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/auth
+          tokenUrl: https://api.fourthwall.com/open-api/v1.0/platform/token
+          scopes:
+            order_read: Read orders
+            order_write: Write orders and fulfillments
+            offer_read: Read products, collections, and gifting
+            offer_write: Write products, collections, and gifting
+            promotions_read: Read promotions
+            promotions_write: Write promotions
+            giveaway_read: Read giveaways
+            giveaway_write: Write giveaways
+            memberships_read: Read memberships
+            memberships_write: Write memberships
+            webhook_read: Read webhooks
+            webhook_write: Write webhooks
+            donation_read: Read donations
+            shop_read: Read shop information
+  schemas:
+    Shop:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    Product:
+      type: object
+      description: A Fourthwall product (offer).
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+        variants:
+          type: array
+          items:
+            $ref: '#/components/schemas/Variant'
+    Variant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        sku:
+          type: string
+        price:
+          $ref: '#/components/schemas/Money'
+    Collection:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+    Cart:
+      type: object
+      properties:
+        id:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+    CartItem:
+      type: object
+      properties:
+        variantId:
+          type: string
+        quantity:
+          type: integer
+    CartCreateRequest:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+    CartItemsRequest:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        friendlyId:
+          type: string
+        status:
+          type: string
+        email:
+          type: string
+        total:
+          $ref: '#/components/schemas/Money'
+    OrderList:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+        paging:
+          type: object
+    Promotion:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+    MembershipTier:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          $ref: '#/components/schemas/Money'
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        tierId:
+          type: string
+        status:
+          type: string
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
+    WebhookConfiguration:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        allowedTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookEventType'
+    WebhookConfigurationCreateRequest:
+      type: object
+      required:
+        - url
+        - allowedTypes
+      properties:
+        url:
+          type: string
+        allowedTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookEventType'
+    WebhookEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/WebhookEventType'
+        payload:
+          type: object
+    WebhookEventType:
+      type: string
+      enum:
+        - ORDER_PLACED
+        - ORDER_UPDATED
+        - GIFT_PURCHASE
+        - PRODUCT_CREATED
+        - PRODUCT_UPDATED
+        - DONATION
+        - SUBSCRIPTION_PURCHASED
+        - SUBSCRIPTION_EXPIRED
+        - SUBSCRIPTION_CHANGED
+        - NEWSLETTER_SUBSCRIBED
+        - THANK_YOU_SENT
+        - GIFT_DRAW_STARTED
+        - GIFT_DRAW_ENDED
+        - PROMOTION_CREATED
+        - PROMOTION_UPDATED
+        - PROMOTION_STATUS_CHANGED
+        - PLATFORM_APP_DISCONNECTED
+        - MEMBERSHIP_POST_UPSERTED
+        - MEMBERSHIP_SERIES_UPSERTED
+        - MEMBERSHIP_SERIES_DELETED
+        - MEMBERSHIP_TAG_CREATED
+        - MEMBERSHIP_TAG_UPDATED
+        - MEMBERSHIP_TAG_DELETED
+        - MEMBERSHIP_TIER_UPSERTED
+        - MEMBERSHIP_TIER_DELETED
+        - COLLECTION_UPDATED
+        - CART_ABANDONED_1H
+        - CART_ABANDONED_24H
+        - CART_ABANDONED_72H

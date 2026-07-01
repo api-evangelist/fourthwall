@@ -1,0 +1,90 @@
+aid: fourthwall
+name: Fourthwall
+review:
+  question: Does Fourthwall expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-01'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    Fourthwall's only asynchronous / event-driven surface is outbound HTTP
+    webhooks (server-to-server POST callbacks), not a WebSocket or SSE
+    stream that a client connects to. Per current API Evangelist scope,
+    outbound webhooks are documented in apis.yml as the Webhooks API and in
+    the OpenAPI (webhook configuration + event endpoints); no AsyncAPI
+    document was authored because there is no WebSocket or client-subscribed
+    streaming channel to model.
+findings:
+  summary: |
+    Fourthwall does not publish a documented public WebSocket API. Its two
+    public HTTP surfaces are the Storefront API
+    (https://storefront-api.fourthwall.com) authenticated with a public
+    storefront token, and the Platform / Open API
+    (https://api.fourthwall.com/open-api/v1.0) authenticated with a shop API
+    key via HTTP Basic Auth or with OAuth 2.0 for multi-shop apps. Real-time
+    notifications are delivered via outbound HTTP webhooks (POST to a
+    subscriber URL, HMAC-SHA256 signed), covering order, product, donation,
+    subscription/membership, promotion, giveaway, newsletter, and
+    abandoned-cart events. No realtime, bidirectional WebSocket (ws:// or
+    wss://) endpoint is documented for any product surface.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://storefront-api.fourthwall.com
+      documented: true
+      note: Public Storefront API; storefront_token query-parameter auth.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.fourthwall.com/open-api/v1.0
+      documented: true
+      note: Platform / Open API; HTTP Basic Auth (shop API key) or OAuth 2.0.
+    - protocol: Webhooks
+      scheme: https
+      documented: true
+      note: Outbound server-to-server POST callbacks, HMAC-SHA256 signed. Not a client-connected stream.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented in the Storefront API, Platform API, or webhooks docs as of the review date.
+  endpointsConfirmedRest:
+    - GET  https://storefront-api.fourthwall.com/v1/shop
+    - GET  https://storefront-api.fourthwall.com/v1/products/{slug}
+    - GET  https://storefront-api.fourthwall.com/v1/collections
+    - GET  https://storefront-api.fourthwall.com/v1/collections/{slug}
+    - GET  https://storefront-api.fourthwall.com/v1/collections/{slug}/products
+    - POST https://storefront-api.fourthwall.com/v1/carts
+    - GET  https://storefront-api.fourthwall.com/v1/carts/{cartId}
+    - POST https://storefront-api.fourthwall.com/v1/carts/{cartId}/add
+    - POST https://storefront-api.fourthwall.com/v1/carts/{cartId}/change
+    - POST https://storefront-api.fourthwall.com/v1/carts/{cartId}/remove
+    - GET  https://api.fourthwall.com/open-api/v1.0/order
+    - GET  https://api.fourthwall.com/open-api/v1.0/order/{orderId}
+    - GET  https://api.fourthwall.com/open-api/v1.0/products
+    - POST https://api.fourthwall.com/open-api/v1.0/products
+    - GET  https://api.fourthwall.com/open-api/v1.0/collections
+    - GET  https://api.fourthwall.com/open-api/v1.0/promotions
+    - POST https://api.fourthwall.com/open-api/v1.0/promotions
+    - POST https://api.fourthwall.com/open-api/v1.0/gifting/checkout
+    - POST https://api.fourthwall.com/open-api/v1.0/giveaways/giveaways
+    - GET  https://api.fourthwall.com/open-api/v1.0/memberships/tiers
+    - GET  https://api.fourthwall.com/open-api/v1.0/memberships/members
+    - GET  https://api.fourthwall.com/open-api/v1.0/webhooks
+    - POST https://api.fourthwall.com/open-api/v1.0/webhooks
+    - GET  https://api.fourthwall.com/open-api/v1.0/webhook-events
+sources:
+  - url: https://docs.fourthwall.com
+    type: Documentation
+    note: Introduction lists Platform API, Storefront API, Membership API, Channel API, and Webhooks. No WebSocket surface.
+  - url: https://docs.fourthwall.com/storefront/overview
+    type: Documentation
+    note: Storefront API base https://storefront-api.fourthwall.com/v1; storefront_token auth; REST only.
+  - url: https://docs.fourthwall.com/open-api/
+    type: APIReference
+    note: Platform / Open API base https://api.fourthwall.com; Basic Auth / OAuth; all documented endpoints are HTTPS REST.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. Event delivery is via outbound HTTP
+    webhooks, which are cataloged as the Webhooks API rather than as an
+    AsyncAPI client-streaming channel. No AsyncAPI document was authored.

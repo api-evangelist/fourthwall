@@ -1,0 +1,60 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Fourthwall
+providerId: fourthwall
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Creator Commerce
+- Ecommerce
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  Fourthwall's Platform (Open) API enforces per-shop rate limits. Most read and
+  standard endpoints allow roughly 100 requests per 10 seconds per shop.
+  Resource-creation endpoints are more tightly limited, typically around 5
+  requests per minute, and media / digital-file upload-URL endpoints around 20
+  requests per minute. The Storefront API is designed for high-read,
+  customer-facing traffic. When a limit is exceeded the API responds with HTTP
+  429; clients should honor Retry-After and back off.
+notes: >-
+  Exact per-endpoint limits are documented per operation in the Fourthwall
+  developer docs and may change; verify against docs.fourthwall.com during
+  reconciliation.
+sources:
+- https://docs.fourthwall.com
+- https://docs.fourthwall.com/open-api/
+responseCodes:
+  throttled: 429
+limits:
+- name: Standard Endpoints
+  scope: shop
+  metric: requests
+  limit: 100 per 10 seconds
+  notes: Applies to most Platform (Open) API read and standard endpoints, per shop.
+- name: Creation Endpoints
+  scope: shop
+  metric: requests
+  limit: 5 per minute
+  notes: Applies to most resource-creation endpoints (create product, collection, promotion, webhook, etc.), per shop.
+- name: Media / Upload-URL Endpoints
+  scope: shop
+  metric: requests
+  limit: 20 per minute
+  notes: Applies to pre-signed media and digital-file upload-URL endpoints, per shop.
+- name: Storefront API
+  scope: shop
+  metric: requests
+  limit: see provider documentation
+  notes: Public storefront-token endpoints optimized for high-read customer-facing traffic.
+policies:
+- name: Per-Shop Scoping
+  description: Limits are enforced per shop, so parallel workloads against the same shop share the same budget.
+- name: Backoff Strategy
+  description: Clients should implement exponential backoff with jitter on HTTP 429 responses and honor any Retry-After header.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

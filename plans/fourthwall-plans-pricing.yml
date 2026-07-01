@@ -1,0 +1,139 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Fourthwall
+providerId: fourthwall
+created: '2026-07-01'
+modified: '2026-07-01'
+reconciled: false
+tags:
+- Creator Commerce
+- Ecommerce
+- Merch
+- Memberships
+- Donations
+- Plans
+description: >-
+  Fourthwall is free to start - there are no monthly platform fees, no upfront
+  costs, and no contracts on the Free plan, and the developer APIs (Storefront
+  API and Platform / Open API) are included at no additional charge. Fourthwall
+  makes money on the underlying commerce, not on API access. For physical
+  products fulfilled from Fourthwall's catalog you pay only the publicly listed
+  flat base cost per item at order time and keep 100% of the margin you set on
+  top; self-sourced physical products carry no product fee. Digital products
+  and memberships carry a percentage fee (waived or reduced on the paid Pro
+  plan), plus standard payment processing. An optional Fourthwall Pro plan adds
+  premium features and waives some fees for a flat monthly price.
+notes: >-
+  Fees and the Pro plan price change; verify current numbers on the Fourthwall
+  pricing/FAQ pages during reconciliation. Percentages/fees below are
+  representative of publicly documented values and are not guaranteed current.
+sources:
+- https://fourthwall.com/faq
+- https://fourthwall.com/
+- https://docs.fourthwall.com
+plans:
+- id: fourthwall-free
+  name: Free
+  type: free
+  description: >-
+    Run a full shop, storefront, memberships, and donations with no monthly
+    fee, no upfront cost, and no contract. Includes full access to the
+    Storefront API and Platform (Open) API. Revenue is earned on commerce:
+    physical products from the catalog are billed at their flat base cost only
+    when an order is placed, and the creator keeps 100% of the margin set on
+    top.
+  entries:
+  - label: Monthly Platform Fee
+    name: platform_fee
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0
+    userMultiplied: false
+  - label: Catalog Physical Product Base Cost
+    name: catalog_base_cost
+    type: usage
+    metric: orders
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: publicly listed flat base cost per item, deducted from your selling price; no extra percentage
+    userMultiplied: false
+  - label: Self-Sourced Physical Product Fee
+    name: self_sourced_fee
+    type: usage
+    metric: orders
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0% product fee
+    userMultiplied: false
+  - label: Digital Product Fee
+    name: digital_product_fee
+    type: usage
+    metric: sales
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: ~5% of sale (Free plan)
+    userMultiplied: false
+  - label: Memberships Fee
+    name: memberships_fee
+    type: usage
+    metric: sales
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: ~5% of membership revenue
+    userMultiplied: false
+  - label: Payment Processing
+    name: payment_processing
+    type: usage
+    metric: transactions
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: ~2.9% + $0.30 per transaction (standard processor rates)
+    userMultiplied: false
+  elements:
+  - name: Storefront API
+  - name: Platform / Open API
+  - name: Webhooks
+  - name: Merch & Product Catalog
+  - name: Memberships
+  - name: Donations & Gifting
+- id: fourthwall-pro
+  name: Fourthwall Pro
+  type: paid
+  description: >-
+    Optional paid plan that adds premium features and waives or reduces some
+    fees (for example, the digital product fee) for a flat monthly or annual
+    price. Includes the same API access as the Free plan.
+  entries:
+  - label: Pro Subscription
+    name: pro_subscription
+    type: flat
+    metric: subscription
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: ~$19/month (or discounted annual)
+    userMultiplied: false
+  elements:
+  - name: Premium Features
+  - name: Reduced / Waived Digital Product Fee
+  - name: Storefront API
+  - name: Platform / Open API
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

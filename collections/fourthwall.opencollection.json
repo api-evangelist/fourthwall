@@ -1,0 +1,544 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Storefront",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get shop information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/shop?storefront_token={{storefrontToken}}"
+          },
+          "docs": "Get shop information."
+        },
+        {
+          "info": {
+            "name": "Get a product by slug",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/products/:slug?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "The product slug."
+              }
+            ]
+          },
+          "docs": "Get a product (offer) by slug."
+        },
+        {
+          "info": {
+            "name": "Get all collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections?storefront_token={{storefrontToken}}"
+          },
+          "docs": "Get all collections."
+        },
+        {
+          "info": {
+            "name": "Get a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections/:slug?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "The collection slug."
+              }
+            ]
+          },
+          "docs": "Get a collection by slug."
+        },
+        {
+          "info": {
+            "name": "Get products in a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections/:slug/products?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path",
+                "description": "The collection slug."
+              }
+            ]
+          },
+          "docs": "Get products (offers) in a collection."
+        },
+        {
+          "info": {
+            "name": "Create cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts?storefront_token={{storefrontToken}}",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"items\": [\n    { \"variantId\": \"\", \"quantity\": 1 }\n  ]\n}"
+            }
+          },
+          "docs": "Create a cart."
+        },
+        {
+          "info": {
+            "name": "Get cart by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path",
+                "description": "The cart id."
+              }
+            ]
+          },
+          "docs": "Get cart by id."
+        },
+        {
+          "info": {
+            "name": "Add to cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/add?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path",
+                "description": "The cart id."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{\n  \"items\": [\n    { \"variantId\": \"\", \"quantity\": 1 }\n  ]\n}"
+            }
+          },
+          "docs": "Add items to a cart."
+        },
+        {
+          "info": {
+            "name": "Change cart items quantity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/change?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path",
+                "description": "The cart id."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{\n  \"items\": [\n    { \"variantId\": \"\", \"quantity\": 2 }\n  ]\n}"
+            }
+          },
+          "docs": "Change cart item quantities."
+        },
+        {
+          "info": {
+            "name": "Remove from cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/remove?storefront_token={{storefrontToken}}",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path",
+                "description": "The cart id."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{\n  \"items\": [\n    { \"variantId\": \"\" }\n  ]\n}"
+            }
+          },
+          "docs": "Remove items from a cart."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/order"
+          },
+          "docs": "Get all orders."
+        },
+        {
+          "info": {
+            "name": "Get order by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/order/:orderId",
+            "params": [
+              {
+                "name": "orderId",
+                "value": "",
+                "type": "path",
+                "description": "The order id."
+              }
+            ]
+          },
+          "docs": "Get order by id."
+        },
+        {
+          "info": {
+            "name": "Get order by friendly id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/order/by-friendly-id/:friendlyId",
+            "params": [
+              {
+                "name": "friendlyId",
+                "value": "",
+                "type": "path",
+                "description": "The friendly order id."
+              }
+            ]
+          },
+          "docs": "Get order by friendly id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all products (offers)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/products"
+          },
+          "docs": "Get all products (offers)."
+        },
+        {
+          "info": {
+            "name": "Create a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.fourthwall.com/open-api/v1.0/products",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a product (offer)."
+        },
+        {
+          "info": {
+            "name": "Get product (offer) by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/products/:productId",
+            "params": [
+              {
+                "name": "productId",
+                "value": "",
+                "type": "path",
+                "description": "The product id."
+              }
+            ]
+          },
+          "docs": "Get product (offer) by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/collections"
+          },
+          "docs": "Get all collections."
+        },
+        {
+          "info": {
+            "name": "Get collection by ID or slug",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/collections/:collectionIdOrSlug",
+            "params": [
+              {
+                "name": "collectionIdOrSlug",
+                "value": "",
+                "type": "path",
+                "description": "The collection id or slug."
+              }
+            ]
+          },
+          "docs": "Get collection by ID or slug."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Promotions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all promotions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/promotions"
+          },
+          "docs": "Get all promotions."
+        },
+        {
+          "info": {
+            "name": "Create a promotion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.fourthwall.com/open-api/v1.0/promotions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a promotion."
+        },
+        {
+          "info": {
+            "name": "Get a promotion by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/promotions/:promotionId",
+            "params": [
+              {
+                "name": "promotionId",
+                "value": "",
+                "type": "path",
+                "description": "The promotion id."
+              }
+            ]
+          },
+          "docs": "Get a promotion by id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Gifting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get gifting config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/gifting/config"
+          },
+          "docs": "Get gifting config."
+        },
+        {
+          "info": {
+            "name": "Create a gifting checkout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.fourthwall.com/open-api/v1.0/gifting/checkout",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a gifting checkout."
+        },
+        {
+          "info": {
+            "name": "Create a new giveaway",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.fourthwall.com/open-api/v1.0/giveaways/giveaways",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new giveaway."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Memberships",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List membership tiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/memberships/tiers"
+          },
+          "docs": "List membership tiers."
+        },
+        {
+          "info": {
+            "name": "List members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/memberships/members"
+          },
+          "docs": "List members."
+        },
+        {
+          "info": {
+            "name": "Get member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/memberships/members/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The member id."
+              }
+            ]
+          },
+          "docs": "Get member."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/webhooks"
+          },
+          "docs": "Get webhook configurations."
+        },
+        {
+          "info": {
+            "name": "Create a webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.fourthwall.com/open-api/v1.0/webhooks",
+            "body": {
+              "type": "json",
+              "data": "{\n  \"url\": \"https://example.com/webhook\",\n  \"allowedTypes\": [\"ORDER_PLACED\"]\n}"
+            }
+          },
+          "docs": "Create a webhook."
+        },
+        {
+          "info": {
+            "name": "Get webhook events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fourthwall.com/open-api/v1.0/webhook-events"
+          },
+          "docs": "Get delivered webhook events."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
