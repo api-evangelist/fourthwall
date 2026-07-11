@@ -1,0 +1,38 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/fourthwall-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  - oauth2
+  api_key_in:
+  - query
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: storefrontToken
+  type: apiKey
+  in: query
+  parameter: storefront_token
+  description: Public storefront token obtained from Settings > For Developers, passed as the
+    storefront_token query parameter on Storefront API requests.
+  sources:
+  - openapi/fourthwall-openapi.yml
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Shop API key used with HTTP Basic Authentication against the Platform (Open)
+    API.
+  sources:
+  - openapi/fourthwall-openapi.yml
+- name: oauth
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/auth
+    tokenUrl: https://api.fourthwall.com/open-api/v1.0/platform/token
+    scopes: 14
+  description: OAuth 2.0 for multi-shop platform apps.
+  sources:
+  - openapi/fourthwall-openapi.yml

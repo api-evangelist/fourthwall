@@ -222,6 +222,12 @@ apis:
     Payloads are HMAC-SHA256 signed and cover order, product, donation, subscription,
     promotion, membership, and abandoned-cart events.
 common:
+- type: VulnerabilityDisclosure
+  url: security/fourthwall-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/fourthwall-domain-security.yml
+- type: Authentication
+  url: authentication/fourthwall-authentication.yml
 - type: OAuthScopes
   url: scopes/fourthwall-scopes.yml
 - type: GitHubOrganization
