@@ -1,0 +1,96 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/fourthwall-openapi.yml
+schemes:
+- name: oauth
+  source: openapi/fourthwall-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/auth
+    tokenUrl: https://api.fourthwall.com/open-api/v1.0/platform/token
+  description: OAuth 2.0 for multi-shop platform apps.
+scopes:
+- scope: donation_read
+  description: Read donations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: giveaway_read
+  description: Read giveaways
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: giveaway_write
+  description: Write giveaways
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: memberships_read
+  description: Read memberships
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: memberships_write
+  description: Write memberships
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: offer_read
+  description: Read products, collections, and gifting
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: offer_write
+  description: Write products, collections, and gifting
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: order_read
+  description: Read orders
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: order_write
+  description: Write orders and fulfillments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: promotions_read
+  description: Read promotions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: promotions_write
+  description: Write promotions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: shop_read
+  description: Read shop information
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: webhook_read
+  description: Read webhooks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml
+- scope: webhook_write
+  description: Write webhooks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/fourthwall-openapi.yml

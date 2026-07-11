@@ -222,6 +222,8 @@ apis:
     Payloads are HMAC-SHA256 signed and cover order, product, donation, subscription,
     promotion, membership, and abandoned-cart events.
 common:
+- type: OAuthScopes
+  url: scopes/fourthwall-scopes.yml
 - type: GitHubOrganization
   url: https://github.com/FourthwallHQ
 - type: LinkedIn
