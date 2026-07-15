@@ -222,6 +222,8 @@ apis:
     Payloads are HMAC-SHA256 signed and cover order, product, donation, subscription,
     promotion, membership, and abandoned-cart events.
 common:
+- type: AgenticAccess
+  url: agentic-access/fourthwall-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/fourthwall-vulnerability-disclosure.yml
 - type: DomainSecurity

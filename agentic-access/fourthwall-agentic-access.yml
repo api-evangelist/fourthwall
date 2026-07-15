@@ -1,0 +1,625 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/fourthwall-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 43
+  by_action_class:
+    connected: 25
+    acting: 18
+  by_consequence:
+    read: 25
+    write: 16
+    physical: 2
+  human_in_the_loop_required: 0
+operations:
+- path: /v1/products/{slug}
+  method: get
+  operationId: getStorefrontProduct
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/collections
+  method: get
+  operationId: getStorefrontCollections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/collections/{slug}
+  method: get
+  operationId: getStorefrontCollection
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/collections/{slug}/products
+  method: get
+  operationId: getStorefrontCollectionProducts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/shop
+  method: get
+  operationId: getStorefrontShop
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/carts
+  method: post
+  operationId: createCart
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/carts/{cartId}
+  method: get
+  operationId: getCart
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v1/carts/{cartId}/add
+  method: post
+  operationId: addToCart
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/carts/{cartId}/change
+  method: post
+  operationId: changeCartItems
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /v1/carts/{cartId}/remove
+  method: post
+  operationId: removeFromCart
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/order
+  method: get
+  operationId: getOrders
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - order_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/order/{orderId}
+  method: get
+  operationId: getOrder
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - order_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/order/by-friendly-id/{friendlyId}
+  method: get
+  operationId: getOrderByFriendlyId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - order_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/order/{orderId}/downloaded
+  method: put
+  operationId: markOrderDownloaded
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - order_write
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/products
+  method: get
+  operationId: getProducts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/products
+  method: post
+  operationId: createProduct
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/products/{productId}
+  method: get
+  operationId: getProduct
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/products/{productId}
+  method: delete
+  operationId: archiveProduct
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/products/{productId}/inventory
+  method: get
+  operationId: getProductInventory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/collections
+  method: get
+  operationId: getCollections
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/collections
+  method: post
+  operationId: createCollection
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/collections/{collectionIdOrSlug}
+  method: get
+  operationId: getCollectionByIdOrSlug
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/collections/{collectionId}/products
+  method: get
+  operationId: getCollectionProducts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/collections/{collectionId}/products
+  method: put
+  operationId: setCollectionProducts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/promotions
+  method: get
+  operationId: getPromotions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - promotions_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/promotions
+  method: post
+  operationId: createPromotion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - promotions_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/promotions/{promotionId}
+  method: get
+  operationId: getPromotion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - promotions_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/promotions/{promotionId}
+  method: put
+  operationId: updatePromotion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - promotions_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/gifting/config
+  method: get
+  operationId: getGiftingConfig
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/gifting/config
+  method: put
+  operationId: updateGiftingConfig
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/gifting/checkout
+  method: post
+  operationId: createGiftingCheckout
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/gifting/draw/{id}
+  method: get
+  operationId: getGiftDraw
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - offer_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/gifting/draw/{id}/finish
+  method: put
+  operationId: finishGiftDraw
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - offer_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/giveaways/giveaways
+  method: post
+  operationId: createGiveaway
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - giveaway_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/memberships/tiers
+  method: get
+  operationId: listMembershipTiers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - memberships_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/memberships/members
+  method: get
+  operationId: listMembers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - memberships_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/memberships/members/{id}
+  method: get
+  operationId: getMember
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - memberships_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/webhooks
+  method: get
+  operationId: getWebhooks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - webhook_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/webhooks
+  method: post
+  operationId: createWebhook
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - webhook_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/webhooks/{webhookConfigurationId}
+  method: get
+  operationId: getWebhook
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - webhook_read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /open-api/v1.0/webhooks/{webhookConfigurationId}
+  method: put
+  operationId: updateWebhook
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - webhook_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/webhooks/{webhookConfigurationId}
+  method: delete
+  operationId: deleteWebhook
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - webhook_write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /open-api/v1.0/webhook-events
+  method: get
+  operationId: getWebhookEvents
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - webhook_read
+    token:
+      max-ttl: 3600
+    audit: none
