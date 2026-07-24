@@ -1,0 +1,139 @@
+openapi: 3.1.0
+info:
+  title: Fourthwall Collections Memberships API
+  description: 'Representative OpenAPI description of Fourthwall''s public creator commerce APIs. Fourthwall exposes two HTTP surfaces: a public Storefront API (authenticated with a storefront token) for building headless shops, and a Platform / Open API (authenticated with a shop API key via HTTP Basic Auth, or OAuth 2.0 for multi-shop apps) for managing orders, products, collections, promotions, gifting, memberships, and webhooks. This document is a faithful, representative subset for cataloging; consult https://docs.fourthwall.com for the complete, authoritative reference.'
+  termsOfService: https://fourthwall.com/terms-of-service
+  contact:
+    name: Fourthwall
+    url: https://fourthwall.com
+  version: v1
+servers:
+- url: https://storefront-api.fourthwall.com
+  description: Storefront API (public storefront token)
+- url: https://api.fourthwall.com
+  description: Platform / Open API (shop API key or OAuth)
+tags:
+- name: Memberships
+paths:
+  /open-api/v1.0/memberships/tiers:
+    get:
+      operationId: listMembershipTiers
+      tags:
+      - Memberships
+      summary: List membership tiers
+      security:
+      - basicAuth: []
+      - oauth:
+        - memberships_read
+      responses:
+        '200':
+          description: A list of membership tiers.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MembershipTier'
+  /open-api/v1.0/memberships/members:
+    get:
+      operationId: listMembers
+      tags:
+      - Memberships
+      summary: List members
+      security:
+      - basicAuth: []
+      - oauth:
+        - memberships_read
+      responses:
+        '200':
+          description: A list of members.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Member'
+  /open-api/v1.0/memberships/members/{id}:
+    get:
+      operationId: getMember
+      tags:
+      - Memberships
+      summary: Get member
+      security:
+      - basicAuth: []
+      - oauth:
+        - memberships_read
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The member.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+components:
+  schemas:
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        tierId:
+          type: string
+        status:
+          type: string
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
+    MembershipTier:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        price:
+          $ref: '#/components/schemas/Money'
+  securitySchemes:
+    storefrontToken:
+      type: apiKey
+      in: query
+      name: storefront_token
+      description: Public storefront token obtained from Settings > For Developers, passed as the storefront_token query parameter on Storefront API requests.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Shop API key used with HTTP Basic Authentication against the Platform (Open) API.
+    oauth:
+      type: oauth2
+      description: OAuth 2.0 for multi-shop platform apps.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.fourthwall.com/auth/realms/Fourthwall/protocol/openid-connect/auth
+          tokenUrl: https://api.fourthwall.com/open-api/v1.0/platform/token
+          scopes:
+            order_read: Read orders
+            order_write: Write orders and fulfillments
+            offer_read: Read products, collections, and gifting
+            offer_write: Write products, collections, and gifting
+            promotions_read: Read promotions
+            promotions_write: Write promotions
+            giveaway_read: Read giveaways
+            giveaway_write: Write giveaways
+            memberships_read: Read memberships
+            memberships_write: Write memberships
+            webhook_read: Read webhooks
+            webhook_write: Write webhooks
+            donation_read: Read donations
+            shop_read: Read shop information
