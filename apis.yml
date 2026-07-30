@@ -8,7 +8,20 @@ description: Fourthwall is a creator commerce platform for building a branded on
   for headless product/collection/cart experiences and a Platform / Open API (Basic
   Auth API key or OAuth) for managing orders, products, promotions, gifting, memberships,
   and webhooks.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fourthwall.png
 tags:
 - Creator Commerce
 - Ecommerce
@@ -21,206 +34,247 @@ created: '2026-07-01'
 modified: '2026-07-01'
 specificationVersion: '0.19'
 apis:
-- aid: fourthwall:fourthwall-storefront-products-api
-  name: Fourthwall Storefront Products API
-  tags:
-  - Storefront
-  - Products
-  - Offers
-  - Catalog
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+- aid: fourthwall:fourthwall-collections-api
+  name: Fourthwall Collections API
+  description: The Collections API from Fourthwall — 3 operation(s) for collections.
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
-  properties:
-  - url: https://docs.fourthwall.com/storefront/overview
-    type: Documentation
-  - url: https://docs.fourthwall.com/storefront-api/
-    type: APIReference
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Public, storefront-token-authenticated read access to a shop's product
-    (offer) catalog for building headless and custom storefronts, including fetching
-    a product by slug.
-- aid: fourthwall:fourthwall-storefront-collections-api
-  name: Fourthwall Storefront Collections API
   tags:
-  - Storefront
   - Collections
-  - Catalog
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-collections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-gifting-api
+  name: Fourthwall Gifting API
+  description: The Gifting API from Fourthwall — 4 operation(s) for gifting.
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
-  properties:
-  - url: https://docs.fourthwall.com/storefront/overview
-    type: Documentation
-  - url: https://docs.fourthwall.com/storefront-api/
-    type: APIReference
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Public storefront access to a shop's collections - list all collections,
-    get a collection by slug, and list the products within a collection - plus shop
-    information for headless commerce front ends.
-- aid: fourthwall:fourthwall-storefront-cart-checkout-api
-  name: Fourthwall Storefront Cart & Checkout API
-  tags:
-  - Storefront
-  - Cart
-  - Checkout
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/storefront/overview
-  baseURL: https://storefront-api.fourthwall.com/v1
-  properties:
-  - url: https://docs.fourthwall.com/storefront/overview
-    type: Documentation
-  - url: https://docs.fourthwall.com/storefront-api/
-    type: APIReference
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Create and manage a storefront cart (create, get, add, change quantity,
-    remove items) then redirect the shopper to Fourthwall's hosted, PCI-compliant
-    checkout to complete the purchase.
-- aid: fourthwall:fourthwall-orders-api
-  name: Fourthwall Orders API
-  tags:
-  - Orders
-  - Platform
-  - Fulfillment
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
-  properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Platform (Open) API for retrieving a shop's orders - list all orders,
-    get an order by id or friendly id, mark digital downloads as downloaded, and create
-    fulfillments and external orders. Authenticated with a shop API key (Basic Auth)
-    or OAuth.
-- aid: fourthwall:fourthwall-products-api
-  name: Fourthwall Products API
-  tags:
-  - Products
-  - Offers
-  - Collections
-  - Platform
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
-  properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Platform API for managing products (offers), inventory, digital products,
-    and collections - create, list, get, archive products, update availability and
-    lifecycle state, and set the products in a collection.
-- aid: fourthwall:fourthwall-gifting-giveaways-api
-  name: Fourthwall Gifting & Giveaways API
   tags:
   - Gifting
-  - Giveaways
-  - Twitch
-  - Platform
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
   properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Platform API for community gifting and giveaways - configure gifting,
-    create gifting checkouts, run and finish gift draws, create and finish giveaways
-    and giveaway links, and look up Twitch gift purchases.
-- aid: fourthwall:fourthwall-promotions-api
-  name: Fourthwall Promotions API
+  - type: OpenAPI
+    url: openapi/fourthwall-gifting-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-giveaways-api
+  name: Fourthwall Giveaways API
+  description: The Giveaways API from Fourthwall — 1 operation(s) for giveaways.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
   tags:
-  - Promotions
-  - Discounts
-  - Platform
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
+  - Giveaways
   properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Platform API for shop promotions and discounts - create a promotion,
-    list all promotions, get a promotion by id, and update an existing promotion.
+  - type: OpenAPI
+    url: openapi/fourthwall-giveaways-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
 - aid: fourthwall:fourthwall-memberships-api
   name: Fourthwall Memberships API
+  description: The Memberships API from Fourthwall — 3 operation(s) for memberships.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
   tags:
   - Memberships
-  - Subscriptions
-  - Members
-  - Platform
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
   properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: 'Platform API (BETA) for recurring memberships - list membership tiers,
-    list members, and get an individual member. Subscription lifecycle changes are
-    surfaced through webhooks (SUBSCRIPTION_PURCHASED / EXPIRED / CHANGED).'
+  - type: OpenAPI
+    url: openapi/fourthwall-memberships-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-orders-api
+  name: Fourthwall Orders API
+  description: The Orders API from Fourthwall — 4 operation(s) for orders.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-products-api
+  name: Fourthwall Products API
+  description: The Products API from Fourthwall — 3 operation(s) for products.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-products-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-promotions-api
+  name: Fourthwall Promotions API
+  description: The Promotions API from Fourthwall — 2 operation(s) for promotions.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Promotions
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-promotions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-storefront-carts-api
+  name: Fourthwall Storefront Carts API
+  description: The Storefront Carts API from Fourthwall — 5 operation(s) for storefront carts.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Storefront Carts
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-storefront-carts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-storefront-collections-api
+  name: Fourthwall Storefront Collections API
+  description: >-
+    The Storefront Collections API from Fourthwall — 3 operation(s) for storefront collections.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Storefront Collections
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-storefront-collections-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-storefront-products-api
+  name: Fourthwall Storefront Products API
+  description: The Storefront Products API from Fourthwall — 1 operation(s) for storefront products.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Storefront Products
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-storefront-products-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
+- aid: fourthwall:fourthwall-storefront-shop-api
+  name: Fourthwall Storefront Shop API
+  description: The Storefront Shop API from Fourthwall — 1 operation(s) for storefront shop.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
+  tags:
+  - Storefront Shop
+  properties:
+  - type: OpenAPI
+    url: openapi/fourthwall-storefront-shop-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
 - aid: fourthwall:fourthwall-webhooks-api
   name: Fourthwall Webhooks API
+  description: The Webhooks API from Fourthwall — 3 operation(s) for webhooks.
+  humanURL: https://docs.fourthwall.com/storefront/overview
+  baseURL: https://storefront-api.fourthwall.com/v1
   tags:
   - Webhooks
-  - Events
-  - Platform
-  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-  humanURL: https://docs.fourthwall.com/open-api/
-  baseURL: https://api.fourthwall.com/open-api/v1.0
   properties:
-  - url: https://docs.fourthwall.com/open-api/
-    type: Documentation
-  - url: openapi/fourthwall-openapi.yml
-    type: OpenAPI
-  - url: collections/fourthwall.postman_collection.json
-    type: PostmanCollection
-  - url: collections/fourthwall.opencollection.json
-    type: OpenCollection
-  description: Platform API for managing webhook subscriptions - create, list, get,
-    update, and delete webhook configurations, and read delivered webhook events.
-    Payloads are HMAC-SHA256 signed and cover order, product, donation, subscription,
-    promotion, membership, and abandoned-cart events.
+  - type: OpenAPI
+    url: openapi/fourthwall-webhooks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.fourthwall.com/storefront/overview
+  - type: APIReference
+    url: https://docs.fourthwall.com/storefront-api/
+  - type: PostmanCollection
+    url: collections/fourthwall.postman_collection.json
+  - type: OpenCollection
+    url: collections/fourthwall.opencollection.json
+  - type: Documentation
+    url: https://docs.fourthwall.com/open-api/
 common:
 - type: AgenticAccess
   url: agentic-access/fourthwall-agentic-access.yml
