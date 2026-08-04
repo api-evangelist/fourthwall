@@ -1,0 +1,36 @@
+{
+  "provider": "fourthwall",
+  "sources": [
+    "fourthwall-collections-api-openapi.yml",
+    "fourthwall-gifting-api-openapi.yml",
+    "fourthwall-giveaways-api-openapi.yml",
+    "fourthwall-memberships-api-openapi.yml",
+    "fourthwall-orders-api-openapi.yml",
+    "fourthwall-products-api-openapi.yml",
+    "fourthwall-promotions-api-openapi.yml",
+    "fourthwall-storefront-carts-api-openapi.yml",
+    "fourthwall-storefront-collections-api-openapi.yml",
+    "fourthwall-storefront-products-api-openapi.yml",
+    "fourthwall-storefront-shop-api-openapi.yml",
+    "fourthwall-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "fourthwall-collections-api-openapi.yml",
+    "fourthwall-gifting-api-openapi.yml",
+    "fourthwall-giveaways-api-openapi.yml",
+    "fourthwall-memberships-api-openapi.yml",
+    "fourthwall-orders-api-openapi.yml",
+    "fourthwall-products-api-openapi.yml",
+    "fourthwall-promotions-api-openapi.yml",
+    "fourthwall-storefront-carts-api-openapi.yml",
+    "fourthwall-storefront-collections-api-openapi.yml",
+    "fourthwall-storefront-products-api-openapi.yml",
+    "fourthwall-storefront-shop-api-openapi.yml",
+    "fourthwall-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
