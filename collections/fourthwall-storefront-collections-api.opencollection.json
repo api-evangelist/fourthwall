@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall Collections Storefront Collections API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Storefront Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections",
+            "params": [
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get all collections"
+        },
+        {
+          "info": {
+            "name": "Get a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections/:slug",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get a collection"
+        },
+        {
+          "info": {
+            "name": "Get products (offers) in a collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/collections/:slug/products",
+            "params": [
+              {
+                "name": "slug",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get products (offers) in a collection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,133 @@
+{
+  "item": [
+    {
+      "id": "5eddbe99-73fa-466d-a71f-7544047d57aa",
+      "name": "Storefront Shop",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8141272f-abcc-4e86-a59a-fa641ca216e1",
+          "name": "Get shop information",
+          "request": {
+            "name": "Get shop information",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "shop"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "storefront_token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "storefront_token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2bfc192c-c256-4daf-b7ee-fd9a0a73bd75",
+              "name": "Shop information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "shop"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "storefront_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "storefront_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://storefront-api.fourthwall.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1d722e16-10dd-424d-859b-d435be4e1eff",
+    "name": "Fourthwall Collections Storefront Shop API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI description of Fourthwall's public creator commerce APIs. Fourthwall exposes two HTTP surfaces: a public Storefront API (authenticated with a storefront token) for building headless shops, and a Platform / Open API (authenticated with a shop API key via HTTP Basic Auth, or OAuth 2.0 for multi-shop apps) for managing orders, products, collections, promotions, gifting, memberships, and webhooks. This document is a faithful, representative subset for cataloging; consult https://docs.fourthwall.com for the complete, authoritative reference.\n\nContact Support:\n Name: Fourthwall",
+      "type": "text/plain"
+    }
+  }
+}

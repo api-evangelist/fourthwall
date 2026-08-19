@@ -1,0 +1,151 @@
+{
+  "item": [
+    {
+      "id": "9979f571-1965-4681-b370-decc76b7bf5d",
+      "name": "Storefront Products",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd1ed2a3-e4c2-4bb2-b5c0-4a5ffde53424",
+          "name": "Get a product by slug",
+          "request": {
+            "name": "Get a product by slug",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "products",
+                ":slug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "storefront_token",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "slug",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "storefront_token"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "query"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5094a724-3225-41c2-8c5c-6391155c0599",
+              "name": "The product (offer).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "products",
+                    ":slug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "storefront_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "storefront_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "slug",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"slug\": \"string\",\n  \"description\": \"string\",\n  \"state\": \"string\",\n  \"variants\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"sku\": \"string\",\n      \"price\": {\n        \"value\": 4532.899416554909,\n        \"currency\": \"string\"\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"sku\": \"string\",\n      \"price\": {\n        \"value\": 4670.043127351443,\n        \"currency\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://storefront-api.fourthwall.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "86ff25e7-adcf-4ed6-9c2a-f0d598a9f15f",
+    "name": "Fourthwall Collections Storefront Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Representative OpenAPI description of Fourthwall's public creator commerce APIs. Fourthwall exposes two HTTP surfaces: a public Storefront API (authenticated with a storefront token) for building headless shops, and a Platform / Open API (authenticated with a shop API key via HTTP Basic Auth, or OAuth 2.0 for multi-shop apps) for managing orders, products, collections, promotions, gifting, memberships, and webhooks. This document is a faithful, representative subset for cataloging; consult https://docs.fourthwall.com for the complete, authoritative reference.\n\nContact Support:\n Name: Fourthwall",
+      "type": "text/plain"
+    }
+  }
+}

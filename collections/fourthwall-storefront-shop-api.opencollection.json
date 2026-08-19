@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall Collections Storefront Shop API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Storefront Shop",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get shop information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/shop",
+            "params": [
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get shop information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

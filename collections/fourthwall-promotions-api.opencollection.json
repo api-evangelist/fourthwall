@@ -1,0 +1,104 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall Collections Promotions API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Promotions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all promotions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/promotions",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get all promotions"
+        },
+        {
+          "info": {
+            "name": "Create a promotion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/promotions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create a promotion"
+        },
+        {
+          "info": {
+            "name": "Get a promotion by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/promotions/:promotionId",
+            "params": [
+              {
+                "name": "promotionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get a promotion by id"
+        },
+        {
+          "info": {
+            "name": "Update a promotion",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/promotions/:promotionId",
+            "params": [
+              {
+                "name": "promotionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update a promotion"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

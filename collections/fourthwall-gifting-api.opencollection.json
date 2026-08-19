@@ -1,0 +1,120 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall Collections Gifting API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gifting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get gifting config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/gifting/config",
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get gifting config"
+        },
+        {
+          "info": {
+            "name": "Update gifting config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/gifting/config",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Update gifting config"
+        },
+        {
+          "info": {
+            "name": "Create a gifting checkout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/gifting/checkout",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Create a gifting checkout"
+        },
+        {
+          "info": {
+            "name": "Get draw",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/gifting/draw/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Get draw"
+        },
+        {
+          "info": {
+            "name": "Finish draw",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://storefront-api.fourthwall.com/open-api/v1.0/gifting/draw/:id/finish",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Finish draw"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

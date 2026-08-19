@@ -1,0 +1,174 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fourthwall Collections Storefront Carts API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Storefront Carts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts",
+            "params": [
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Create cart"
+        },
+        {
+          "info": {
+            "name": "Get cart by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Get cart by id"
+        },
+        {
+          "info": {
+            "name": "Add to cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/add",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Add to cart"
+        },
+        {
+          "info": {
+            "name": "Change cart items quantity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/change",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Change cart items quantity"
+        },
+        {
+          "info": {
+            "name": "Remove from cart",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://storefront-api.fourthwall.com/v1/carts/:cartId/remove",
+            "params": [
+              {
+                "name": "cartId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "storefront_token",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "storefront_token",
+              "value": "{{storefront_token}}",
+              "placement": "query"
+            }
+          },
+          "docs": "Remove from cart"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
