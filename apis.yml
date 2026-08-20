@@ -24,6 +24,14 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fourthwall.png
 tags:
 - Creator Commerce
+- E-Commerce
+- Merch
+- Storefront
+- Memberships
+- Donations
+- Print on Demand
+tags_raw:
+- Creator Commerce
 - Ecommerce
 - Merch
 - Storefront
@@ -40,6 +48,8 @@ apis:
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
   tags:
+  - Collection
+  tags_raw:
   - Collections
   properties:
   - type: OpenAPI
@@ -120,6 +130,8 @@ apis:
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -140,6 +152,8 @@ apis:
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -261,6 +275,8 @@ apis:
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
