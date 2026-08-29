@@ -8,6 +8,18 @@ description: Fourthwall is a creator commerce platform for building a branded on
   for headless product/collection/cart experiences and a Platform / Open API (Basic
   Auth API key or OAuth) for managing orders, products, promotions, gifting, memberships,
   and webhooks.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
