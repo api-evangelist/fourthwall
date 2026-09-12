@@ -1,28 +1,29 @@
-# Kin Score artifact — fourthwall — 2026-08-10T111628
+# Kin Score artifact — fourthwall — 2026-09-12T080032
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: fourthwall
-  schema_version: 0.9.1
-  scored_at: '2026-08-10'
-  run_ts: 2026-08-10T111628
-  composite: 35.6
+  schema_version: 0.21.0
+  scored_at: '2026-09-12'
+  run_ts: 2026-09-12T080032
+  composite: 33.3
   band: thin
   facets:
-    discoverability: 74.1
-    contract_quality: 55.0
-    governance: 0.0
-    operational_transparency: 36.8
-    developer_ergonomics: 19.6
-    commercial_clarity: 28.9
+    discoverability: 68.5
+    contract_quality: 49.8
+    contract_governance: 0.0
+    operational_transparency: 34.2
+    developer_ergonomics: 22.6
+    access_clarity: 28.9
   agent_readiness:
     score: 30.6
-    band: agent-aware
+    band: agent-ready
     dimensions:
       spec_presence: true
       agentic_access: derived
-      mcp_server: false
-      auth_clarity: true
+      reversibility_documented: false
+      mcp_server: verified
+      auth_clarity: bearer
       idempotency: false
       error_semantics: false
       openapi_examples: false
@@ -33,7 +34,12 @@ kin_score:
       consent_identity: false
       agent_card: false
       dry_run_mode: false
+      delegated_identity: documented
+      protected_resource_metadata: false
+      dynamic_client_registration: false
+      agentic_commerce: false
   provenance:
+    mcp: first-party
     agentic_access: derived
     contracts:
       total: 12
