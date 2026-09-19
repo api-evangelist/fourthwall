@@ -39,7 +39,7 @@ tags:
 - E-Commerce
 - Merch
 - Storefront
-- Memberships
+- Membership
 - Donations
 - Print on Demand
 tags_raw:
@@ -122,6 +122,8 @@ apis:
   humanURL: https://docs.fourthwall.com/storefront/overview
   baseURL: https://storefront-api.fourthwall.com/v1
   tags:
+  - Membership
+  tags_raw:
   - Memberships
   properties:
   - type: OpenAPI
