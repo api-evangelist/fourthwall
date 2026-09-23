@@ -1,0 +1,1 @@
+{"resource":"https://mcp.fourthwall.com/","authorization_servers":["https://mcp.fourthwall.com/"],"scopes_supported":["openid","profile","email","offline_access"],"bearer_methods_supported":["header"]}

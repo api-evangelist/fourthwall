@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Fourthwall Collections Orders API
-  description: 'Representative OpenAPI description of Fourthwall''s public creator commerce APIs. Fourthwall exposes two HTTP surfaces: a public Storefront API (authenticated with a storefront token) for building headless shops, and a Platform / Open API (authenticated with a shop API key via HTTP Basic Auth, or OAuth 2.0 for multi-shop apps) for managing orders, products, collections, promotions, gifting, memberships, and webhooks. This document is a faithful, representative subset for cataloging; consult https://docs.fourthwall.com for the complete, authoritative reference.'
+  title: Fourthwall Orders API
+  description: Representative OpenAPI description of Fourthwall's public creator commerce APIs.
   termsOfService: https://fourthwall.com/terms-of-service
   contact:
     name: Fourthwall
@@ -108,6 +108,13 @@ components:
             $ref: '#/components/schemas/Order'
         paging:
           type: object
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
     Order:
       type: object
       properties:
@@ -121,13 +128,6 @@ components:
           type: string
         total:
           $ref: '#/components/schemas/Money'
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
   securitySchemes:
     storefrontToken:
       type: apiKey
