@@ -89,13 +89,6 @@ components:
           type: string
         status:
           type: string
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
     MembershipTier:
       type: object
       properties:
@@ -105,6 +98,13 @@ components:
           type: string
         price:
           $ref: '#/components/schemas/Money'
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
   securitySchemes:
     storefrontToken:
       type: apiKey

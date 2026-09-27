@@ -130,6 +130,13 @@ paths:
           description: Updated.
 components:
   schemas:
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
     Product:
       type: object
       description: A Fourthwall product (offer).
@@ -158,13 +165,6 @@ components:
         slug:
           type: string
         description:
-          type: string
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
           type: string
     Variant:
       type: object

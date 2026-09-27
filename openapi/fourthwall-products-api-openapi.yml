@@ -118,6 +118,13 @@ paths:
           description: Inventory levels.
 components:
   schemas:
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
     Product:
       type: object
       description: A Fourthwall product (offer).
@@ -136,13 +143,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Variant'
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
     Variant:
       type: object
       properties:

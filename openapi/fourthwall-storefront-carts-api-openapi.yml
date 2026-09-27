@@ -166,20 +166,6 @@ paths:
                 $ref: '#/components/schemas/Cart'
 components:
   schemas:
-    CartItem:
-      type: object
-      properties:
-        variantId:
-          type: string
-        quantity:
-          type: integer
-    CartCreateRequest:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/CartItem'
     CartItemsRequest:
       type: object
       properties:
@@ -187,11 +173,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CartItem'
+    CartItem:
+      type: object
+      properties:
+        variantId:
+          type: string
+        quantity:
+          type: integer
     Cart:
       type: object
       properties:
         id:
           type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+    CartCreateRequest:
+      type: object
+      properties:
         items:
           type: array
           items:
