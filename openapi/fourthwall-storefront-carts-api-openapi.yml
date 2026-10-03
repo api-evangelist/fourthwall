@@ -173,13 +173,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CartItem'
-    CartItem:
-      type: object
-      properties:
-        variantId:
-          type: string
-        quantity:
-          type: integer
     Cart:
       type: object
       properties:
@@ -189,6 +182,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CartItem'
+    CartItem:
+      type: object
+      properties:
+        variantId:
+          type: string
+        quantity:
+          type: integer
     CartCreateRequest:
       type: object
       properties:

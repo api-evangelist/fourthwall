@@ -112,13 +112,6 @@ components:
           type: string
         total:
           $ref: '#/components/schemas/Money'
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
     OrderList:
       type: object
       properties:
@@ -128,6 +121,13 @@ components:
             $ref: '#/components/schemas/Order'
         paging:
           type: object
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
   securitySchemes:
     storefrontToken:
       type: apiKey

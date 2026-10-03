@@ -142,6 +142,15 @@ paths:
                   $ref: '#/components/schemas/WebhookEvent'
 components:
   schemas:
+    WebhookEvent:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          $ref: '#/components/schemas/WebhookEventType'
+        payload:
+          type: object
     WebhookEventType:
       type: string
       enum:
@@ -174,15 +183,6 @@ components:
       - CART_ABANDONED_1H
       - CART_ABANDONED_24H
       - CART_ABANDONED_72H
-    WebhookEvent:
-      type: object
-      properties:
-        id:
-          type: string
-        type:
-          $ref: '#/components/schemas/WebhookEventType'
-        payload:
-          type: object
     WebhookConfigurationCreateRequest:
       type: object
       required:

@@ -50,6 +50,17 @@ components:
           type: number
         currency:
           type: string
+    Variant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        sku:
+          type: string
+        price:
+          $ref: '#/components/schemas/Money'
     Product:
       type: object
       description: A Fourthwall product (offer).
@@ -68,17 +79,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Variant'
-    Variant:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        sku:
-          type: string
-        price:
-          $ref: '#/components/schemas/Money'
   securitySchemes:
     storefrontToken:
       type: apiKey
