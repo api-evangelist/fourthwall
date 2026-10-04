@@ -78,13 +78,6 @@ paths:
                 $ref: '#/components/schemas/Member'
 components:
   schemas:
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
     Member:
       type: object
       properties:
@@ -95,6 +88,13 @@ components:
         tierId:
           type: string
         status:
+          type: string
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
           type: string
     MembershipTier:
       type: object

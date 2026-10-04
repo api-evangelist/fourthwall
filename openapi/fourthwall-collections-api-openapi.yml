@@ -130,13 +130,6 @@ paths:
           description: Updated.
 components:
   schemas:
-    Money:
-      type: object
-      properties:
-        value:
-          type: number
-        currency:
-          type: string
     Variant:
       type: object
       properties:
@@ -166,6 +159,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Variant'
+    Money:
+      type: object
+      properties:
+        value:
+          type: number
+        currency:
+          type: string
     Collection:
       type: object
       properties:
