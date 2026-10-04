@@ -34,6 +34,10 @@ accessModel:
   generated: '2026-07-22'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/fourthwall.png
+x-docs-platform: mintlify
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-10-03
+x-docs-hosting: vercel
 tags:
 - Creator Commerce
 - E-Commerce
@@ -308,6 +312,9 @@ apis:
   - type: Documentation
     url: https://docs.fourthwall.com/open-api/
 common:
+- type: CapabilityMap
+  url: capabilities/fourthwall-capability-edges.yml
+  name: Fourthwall Business Capability Map
 - type: AgenticAccess
   url: agentic-access/fourthwall-agentic-access.yml
 - type: VulnerabilityDisclosure
