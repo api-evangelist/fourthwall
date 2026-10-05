@@ -1,0 +1,45 @@
+slug: fourthwall
+provider: Fourthwall
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Webhooks
+  spec_file: fourthwall-webhooks-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.9
+  evidence: 'POST /open-api/v1.0/webhooks createWebhook Create a webhook; GET /open-api/v1.0/webhook-events
+    getWebhookEvents Get webhook events; schemas: WebhookConfiguration, WebhookEventType'
+  reason: CRUD over webhook configurations plus an event-type catalogue is precisely the lifecycle of
+    outbound webhook subscriptions and event schemas exposed to integrators.
+- tag: Promotions
+  spec_file: fourthwall-promotions-api-openapi.yml
+  capability_id: BC-440.30
+  capability_id_l1: BC-440
+  capability_name: Discount & Promotion Management
+  confidence: 0.8
+  evidence: 'POST /open-api/v1.0/promotions  createPromotion  Create a promotion; schemas: Promotion'
+  reason: Full CRUD over promotion objects on a commerce storefront is squarely Discount & Promotion Management;
+    the only ambiguity is whether discount-policy detail is included.
+- tag: Products
+  spec_file: fourthwall-products-api-openapi.yml
+  capability_id: BC-820
+  capability_id_l1: BC-820
+  capability_name: Product Lifecycle Management
+  confidence: 0.7
+  evidence: POST /open-api/v1.0/products  createProduct  Create a product; DELETE /open-api/v1.0/products/{productId}  archiveProduct  Archive
+    a product (offer)
+  reason: Create, read, archive products and read their inventory — product master/offer lifecycle for
+    a commerce catalogue, which sits under Product Lifecycle Management. Spans creation through archival
+    so no single sub-capability is named.
