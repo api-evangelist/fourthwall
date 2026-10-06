@@ -57,7 +57,7 @@ tags_raw:
 - Print on Demand
 - Creator Economy
 created: '2026-07-01'
-modified: '2026-07-01'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: fourthwall:fourthwall-collections-api
@@ -312,6 +312,10 @@ apis:
   - type: Documentation
     url: https://docs.fourthwall.com/open-api/
 common:
+- url: https://fourthwall.com/blog
+  type: Blog
+- url: https://fourthwall.com/blog/rss.xml
+  type: BlogRSS
 - type: CapabilityMap
   url: capabilities/fourthwall-capability-edges.yml
   name: Fourthwall Business Capability Map
