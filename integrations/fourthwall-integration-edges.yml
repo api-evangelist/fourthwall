@@ -1,0 +1,445 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/fourthwall/integrations
+checked:
+- https://composio.dev/toolkits/fourthwall
+- https://monid.ai/tools/fourthwall
+- https://n8n.io/integrations/fourthwall/
+- https://zapier.com/apps/fourthwall/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations
+  external_url: https://fourthwall.com/
+  partner_tier: SILVER
+  triggers:
+  - key: donation
+    label: New Donation
+  - key: new_gift_purchase
+    label: New Gift Purchase
+  - key: new_newsletter_subscription
+    label: Newsletter Subscribed
+  - key: new_order
+    label: Order Placed
+  - key: new_product
+    label: Product Created
+  - key: new_promotion
+    label: Promotion Created
+  - key: new_subscription
+    label: Subscription Purchased
+  - key: order_updated
+    label: Order Updated
+  - key: product_updated
+    label: Product Updated
+  - key: promotion_updated
+    label: Promotion Updated
+  - key: subscription_changed
+    label: Subscription Changed
+  - key: subscription_expired
+    label: Subscription Expired
+  actions:
+  - key: external_order
+    label: Create External Order
+  - key: membership_percentage_promotion
+    label: Create % Off Membership Promotion
+  - key: shop_flat_promotion
+    label: Create Flat Rate Off Shop Promotion
+  - key: shop_percentage_promotion
+    label: Create % Off Shop Promotion
+  searches: []
+edges:
+- partner_name: Discord
+  partner: discord
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/discord
+  direction: third-party
+  category: Team Chat
+  partner_url: https://discordapp.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: MailerLite
+  partner: mailerlite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/mailerlite
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.mailerlite.com/?utm_source=zapier&utm_medium=partner&utm_campaign=profile&utm_term=learn_more&utm_content=integrations
+- partner_name: WooCommerce
+  partner: woocommerce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/woocommerce
+  direction: third-party
+  category: eCommerce
+  partner_url: https://woocommerce.com/products/woocommerce-zapier/?utm_source=zapier&utm_medium=website&utm_campaign=integration
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: Pinterest
+  partner: pinterest
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/pinterest
+  direction: third-party
+  category: Social Media Accounts
+  partner_url: https://pinterest.com/
+- partner_name: Brevo
+  partner: brevo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/brevo
+  direction: third-party
+  category: Email Newsletters
+  partner_url: https://www.sendinblue.com/?utm_medium=plugin&utm_source=zapier
+- partner_name: systeme.io
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/systemeio
+  direction: third-party
+  category: Marketing
+  partner_url: https://systeme.io/
+- partner_name: Amazon Seller Central
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/amazon-seller-central
+  direction: third-party
+  category: Amazon
+  partner_url: https://sellercentral.amazon.com/
+- partner_name: Bookvault
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/bookvault
+  direction: third-party
+  category: Printing
+  partner_url: https://bookvault.app/
+- partner_name: Kit
+  partner: convertkit
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/kit
+  direction: third-party
+  category: Drip Emails
+  partner_url: https://kit.com/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: Sequenzy
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/sequenzy
+  direction: third-party
+  category: Email
+  partner_url: https://sequenzy.com/
+- partner_name: Google Ads
+  partner: google-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://ads.google.com/
+- partner_name: Square
+  partner: square
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/square
+  direction: third-party
+  category: eCommerce
+  partner_url: https://squareup.com/t/cmtp_performance/pr_developers/d_partnerships/p_zapier/?route=
+- partner_name: Telegram
+  partner: telegram
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/telegram
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://telegram.org/
+- partner_name: Zoho Mail
+  partner: zoho-mail
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/zoho-mail
+  direction: third-party
+  category: Email
+  partner_url: https://go.zoho.com/v0i
+- partner_name: Hello Audio
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/hello-audio
+  direction: third-party
+  category: Video & Audio
+  partner_url: https://app.helloaudio.fm/
+- partner_name: Ko-fi
+  partner: ko-fi
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/ko-fi
+  direction: third-party
+  category: Social Media Accounts
+  partner_url: https://ko-fi.com/
+- partner_name: SweepWidget
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/sweepwidget
+  direction: third-party
+  category: Marketing
+  partner_url: https://sweepwidget.com/
+- partner_name: Stripe
+  partner: stripe
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/stripe
+  direction: third-party
+  category: Payment Processing
+  partner_url: https://stripe.com/
+- partner_name: Google Docs
+  partner: google-docs
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-docs
+  direction: third-party
+  category: Documents
+  partner_url: http://google.com/
+- partner_name: Microsoft Teams
+  partner: microsoft-teams
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/microsoft-teams
+  direction: third-party
+  category: Microsoft
+  partner_url: https://products.office.com/en-us/microsoft-teams/group-chat-software
+- partner_name: ThriveCart
+  partner: thrivecart
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/thrivecart
+  direction: third-party
+  category: eCommerce
+  partner_url: https://thrivecart.com/
+- partner_name: Google Chat
+  partner: google-chat
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-chat
+  direction: third-party
+  category: Google
+  partner_url: https://gsuite.google.com/products/chat/
+- partner_name: WordPress
+  partner: wordpress
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/wordpress
+  direction: third-party
+  category: Website Builders
+  partner_url: https://wordpress.org/
+- partner_name: TickTick
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/ticktick
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.ticktick.com/
+- partner_name: Keap
+  partner: keap
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/keap
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://keap.com/
+- partner_name: Whop
+  partner: whop
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/whop
+  direction: third-party
+  category: Commerce
+  partner_url: https://whop.com/
+templates:
+- title: Generate Pinterest pins for every new product in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/pinterest/255613268/generate-pinterest-pins-for-every-new-product-in-fourthwall
+  apps:
+  - fourthwall
+  - pinterest
+- title: Send channel messages in Discord for new orders in Fourthwall
+  url: https://zapier.com/apps/discord/integrations/fourthwall/255615338/send-channel-messages-in-discord-for-new-orders-in-fourthwall
+  apps:
+  - fourthwall
+  - discord
+- title: Send channel messages in Discord for new subscriptions in Fourthwall
+  url: https://zapier.com/apps/discord/integrations/fourthwall/255621056/send-channel-messages-in-discord-for-new-subscriptions-in-fourthwall
+  apps:
+  - fourthwall
+  - discord
+- title: Send Discord channel messages for new Fourthwall products
+  url: https://zapier.com/apps/discord/integrations/fourthwall/255620814/send-discord-channel-messages-for-new-fourthwall-products
+  apps:
+  - fourthwall
+  - discord
+- title: Send channel messages in Slack for new products in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/slack/255603142/send-channel-messages-in-slack-for-new-products-in-fourthwall
+  apps:
+  - fourthwall
+  - slack
+- title: Update Slack with channel messages when products are updated in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/slack/255603169/update-slack-with-channel-messages-when-products-are-updated-in-fourthwall
+  apps:
+  - fourthwall
+  - slack
+- title: Send a Slack message for every new order in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/slack/255603519/send-a-slack-message-for-every-new-order-in-fourthwall
+  apps:
+  - fourthwall
+  - slack
+- title: Send channel messages in Slack for new promotions in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/slack/255604676/send-channel-messages-in-slack-for-new-promotions-in-fourthwall
+  apps:
+  - fourthwall
+  - slack
+- title: Create or update contacts and grant course access in systeme.io for new Fourthwall orders
+  url: https://zapier.com/apps/fourthwall/integrations/systemeio/255607087/create-or-update-contacts-and-grant-course-access-in-systemeio-for-new-fourthwall-orders
+  apps:
+  - fourthwall
+  - systemeio
+- title: Create and manage LeadConnector opportunities from new Fourthwall orders
+  url: https://zapier.com/apps/fourthwall/integrations/leadconnector/255611810/create-and-manage-leadconnector-opportunities-from-new-fourthwall-orders
+  apps:
+  - fourthwall
+  - leadconnector
+- title: Add newly subscribed Fourthwall newsletter subscriptions as contacts in EmailOctopus
+  url: https://zapier.com/apps/emailoctopus/integrations/fourthwall/255611842/add-newly-subscribed-fourthwall-newsletter-subscriptions-as-contacts-in-emailoctopus
+  apps:
+  - fourthwall
+  - emailoctopus
+- title: Add tags to new subscribers in Kit when new newsletter subscriptions happen in Fourthwall
+  url: https://zapier.com/apps/fourthwall/integrations/kit/255615255/add-tags-to-new-subscribers-in-kit-when-new-newsletter-subscriptions-happen-in-fourthwall
+  apps:
+  - fourthwall
+  - kit
+template_total: 67
