@@ -99,6 +99,15 @@ paths:
           description: Updated.
 components:
   schemas:
+    OrderList:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Order'
+        paging:
+          type: object
     Order:
       type: object
       properties:
@@ -119,15 +128,6 @@ components:
           type: number
         currency:
           type: string
-    OrderList:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Order'
-        paging:
-          type: object
   securitySchemes:
     storefrontToken:
       type: apiKey

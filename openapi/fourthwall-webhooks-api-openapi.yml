@@ -142,6 +142,17 @@ paths:
                   $ref: '#/components/schemas/WebhookEvent'
 components:
   schemas:
+    WebhookConfiguration:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        allowedTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/WebhookEventType'
     WebhookEvent:
       type: object
       properties:
@@ -189,17 +200,6 @@ components:
       - url
       - allowedTypes
       properties:
-        url:
-          type: string
-        allowedTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/WebhookEventType'
-    WebhookConfiguration:
-      type: object
-      properties:
-        id:
-          type: string
         url:
           type: string
         allowedTypes:

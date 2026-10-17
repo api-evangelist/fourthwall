@@ -43,17 +43,13 @@ paths:
                 $ref: '#/components/schemas/Product'
 components:
   schemas:
-    Variant:
+    Money:
       type: object
       properties:
-        id:
+        value:
+          type: number
+        currency:
           type: string
-        name:
-          type: string
-        sku:
-          type: string
-        price:
-          $ref: '#/components/schemas/Money'
     Product:
       type: object
       description: A Fourthwall product (offer).
@@ -72,13 +68,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Variant'
-    Money:
+    Variant:
       type: object
       properties:
-        value:
-          type: number
-        currency:
+        id:
           type: string
+        name:
+          type: string
+        sku:
+          type: string
+        price:
+          $ref: '#/components/schemas/Money'
   securitySchemes:
     storefrontToken:
       type: apiKey
