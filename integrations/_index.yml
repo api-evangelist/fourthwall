@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/pinterest/255613268/generate-pinterest-pins-for-every-new-product-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/pinterest/255613268/generate-pinterest-pins-for-every-new-product-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-channel-messages-in-discord-for-new-orders-in-fourthwall
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/discord/integrations/fourthwall/255615338/send-channel-messages-in-discord-for-new-orders-in-fourthwall
   template: https://zapier.com/apps/discord/integrations/fourthwall/255615338/send-channel-messages-in-discord-for-new-orders-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-channel-messages-in-discord-for-new-subscriptions-in-fourthwall
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/discord/integrations/fourthwall/255621056/send-channel-messages-in-discord-for-new-subscriptions-in-fourthwall
   template: https://zapier.com/apps/discord/integrations/fourthwall/255621056/send-channel-messages-in-discord-for-new-subscriptions-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-discord-channel-messages-for-new-fourthwall-products
@@ -57,6 +60,7 @@
   evidence: https://zapier.com/apps/discord/integrations/fourthwall/255620814/send-discord-channel-messages-for-new-fourthwall-products
   template: https://zapier.com/apps/discord/integrations/fourthwall/255620814/send-discord-channel-messages-for-new-fourthwall-products
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-channel-messages-in-slack-for-new-products-in-fourthwall
@@ -71,6 +75,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/slack/255603142/send-channel-messages-in-slack-for-new-products-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/slack/255603142/send-channel-messages-in-slack-for-new-products-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-update-slack-with-channel-messages-when-products-are-updated-in-fourthwall
@@ -85,6 +90,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/slack/255603169/update-slack-with-channel-messages-when-products-are-updated-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/slack/255603169/update-slack-with-channel-messages-when-products-are-updated-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-a-slack-message-for-every-new-order-in-fourthwall
@@ -99,6 +105,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/slack/255603519/send-a-slack-message-for-every-new-order-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/slack/255603519/send-a-slack-message-for-every-new-order-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-send-channel-messages-in-slack-for-new-promotions-in-fourthwall
@@ -113,6 +120,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/slack/255604676/send-channel-messages-in-slack-for-new-promotions-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/slack/255604676/send-channel-messages-in-slack-for-new-promotions-in-fourthwall
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-create-or-update-contacts-and-grant-course-access-in-systeme-io-for-new-fourthw
@@ -126,6 +134,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/systemeio/255607087/create-or-update-contacts-and-grant-course-access-in-systemeio-for-new-fourthwall-orders
   template: https://zapier.com/apps/fourthwall/integrations/systemeio/255607087/create-or-update-contacts-and-grant-course-access-in-systemeio-for-new-fourthwall-orders
   source: template
+  relationship: ipaas-bridge
   status: pending-partner-spec
   arazzo: null
 - slug: fourthwall-add-tags-to-new-subscribers-in-kit-when-new-newsletter-subscriptions-happen-in-
@@ -140,300 +149,7 @@
   evidence: https://zapier.com/apps/fourthwall/integrations/kit/255615255/add-tags-to-new-subscribers-in-kit-when-new-newsletter-subscriptions-happen-in-fourthwall
   template: https://zapier.com/apps/fourthwall/integrations/kit/255615255/add-tags-to-new-subscribers-in-kit-when-new-newsletter-subscriptions-happen-in-fourthwall
   source: template
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-google-sheets
-  label: Google Sheets
-  partner: google-sheets
-  partner_name: Google Sheets
-  category: Google
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/google-sheets
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-shopify
-  label: Shopify
-  partner: shopify
-  partner_name: Shopify
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/shopify
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-mailerlite
-  label: MailerLite
-  partner: mailerlite
-  partner_name: MailerLite
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/mailerlite
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-woocommerce
-  label: WooCommerce
-  partner: woocommerce
-  partner_name: WooCommerce
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/woocommerce
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-brevo
-  label: Brevo
-  partner: brevo
-  partner_name: Brevo
-  category: Email Newsletters
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/brevo
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-amazon-seller-central
-  label: Amazon Seller Central
-  partner_name: Amazon Seller Central
-  category: Amazon
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/amazon-seller-central
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-bookvault
-  label: Bookvault
-  partner_name: Bookvault
-  category: Printing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/bookvault
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-mailchimp
-  label: Mailchimp
-  partner: mailchimp
-  partner_name: Mailchimp
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/mailchimp
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-sequenzy
-  label: Sequenzy
-  partner_name: Sequenzy
-  category: Email
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/sequenzy
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-google-ads
-  label: Google Ads
-  partner: google-ads
-  partner_name: Google Ads
-  category: Ads & Conversion
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/google-ads
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-square
-  label: Square
-  partner: square
-  partner_name: Square
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/square
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-telegram
-  label: Telegram
-  partner: telegram
-  partner_name: Telegram
-  category: Phone & SMS
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/telegram
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-zoho-mail
-  label: Zoho Mail
-  partner: zoho-mail
-  partner_name: Zoho Mail
-  category: Email
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/zoho-mail
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-hello-audio
-  label: Hello Audio
-  partner_name: Hello Audio
-  category: Video & Audio
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/hello-audio
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-ko-fi
-  label: Ko-fi
-  partner: ko-fi
-  partner_name: Ko-fi
-  category: Social Media Accounts
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/ko-fi
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-sweepwidget
-  label: SweepWidget
-  partner_name: SweepWidget
-  category: Marketing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/sweepwidget
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-stripe
-  label: Stripe
-  partner: stripe
-  partner_name: Stripe
-  category: Payment Processing
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/stripe
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-google-docs
-  label: Google Docs
-  partner: google-docs
-  partner_name: Google Docs
-  category: Documents
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/google-docs
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-microsoft-teams
-  label: Microsoft Teams
-  partner: microsoft-teams
-  partner_name: Microsoft Teams
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/microsoft-teams
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-thrivecart
-  label: ThriveCart
-  partner: thrivecart
-  partner_name: ThriveCart
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/thrivecart
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-google-chat
-  label: Google Chat
-  partner: google-chat
-  partner_name: Google Chat
-  category: Google
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/google-chat
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-wordpress
-  label: WordPress
-  partner: wordpress
-  partner_name: WordPress
-  category: Website Builders
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/wordpress
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-ticktick
-  label: TickTick
-  partner_name: TickTick
-  category: Task Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/ticktick
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: fourthwall-keap
-  label: Keap
-  partner: keap
-  partner_name: Keap
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/keap
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: fourthwall-whop
-  label: Whop
-  partner: whop
-  partner_name: Whop
-  category: Commerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/fourthwall/integrations/whop
-  source: edge
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: fourthwall-zapier
@@ -460,4 +176,324 @@
     beta: false
     builder: unknown (not in the directory record)
   status: not-a-workflow
+  arazzo: null
+- slug: fourthwall-google-sheets
+  label: Google Sheets
+  partner: google-sheets
+  partner_name: Google Sheets
+  category: Google
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-sheets
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-shopify
+  label: Shopify
+  partner: shopify
+  partner_name: Shopify
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/shopify
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-mailerlite
+  label: MailerLite
+  partner: mailerlite
+  partner_name: MailerLite
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/mailerlite
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-woocommerce
+  label: WooCommerce
+  partner: woocommerce
+  partner_name: WooCommerce
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/woocommerce
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-brevo
+  label: Brevo
+  partner: brevo
+  partner_name: Brevo
+  category: Email Newsletters
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/brevo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-amazon-seller-central
+  label: Amazon Seller Central
+  partner: amazon
+  partner_name: Amazon Seller Central
+  category: Amazon
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/amazon-seller-central
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-bookvault
+  label: Bookvault
+  partner_name: Bookvault
+  category: Printing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/bookvault
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-mailchimp
+  label: Mailchimp
+  partner: mailchimp
+  partner_name: Mailchimp
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/mailchimp
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-zoom
+  label: Zoom
+  partner: zoom
+  partner_name: Zoom
+  category: Video Conferencing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/zoom
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-square
+  label: Square
+  partner: square
+  partner_name: Square
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/square
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-sequenzy
+  label: Sequenzy
+  partner_name: Sequenzy
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/sequenzy
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-google-ads
+  label: Google Ads
+  partner: google-ads
+  partner_name: Google Ads
+  category: Ads & Conversion
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-ads
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-telegram
+  label: Telegram
+  partner: telegram
+  partner_name: Telegram
+  category: Phone & SMS
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/telegram
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-zoho-mail
+  label: Zoho Mail
+  partner: zoho-mail
+  partner_name: Zoho Mail
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/zoho-mail
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-hello-audio
+  label: Hello Audio
+  partner_name: Hello Audio
+  category: Video & Audio
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/hello-audio
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-ko-fi
+  label: Ko-fi
+  partner: ko-fi
+  partner_name: Ko-fi
+  category: Social Media Accounts
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/ko-fi
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-sweepwidget
+  label: SweepWidget
+  partner_name: SweepWidget
+  category: Marketing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/sweepwidget
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-stripe
+  label: Stripe
+  partner: stripe
+  partner_name: Stripe
+  category: Payment Processing
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/stripe
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-google-docs
+  label: Google Docs
+  partner: google-docs
+  partner_name: Google Docs
+  category: Documents
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-docs
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-microsoft-teams
+  label: Microsoft Teams
+  partner: microsoft-teams
+  partner_name: Microsoft Teams
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/microsoft-teams
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-thrivecart
+  label: ThriveCart
+  partner: thrivecart
+  partner_name: ThriveCart
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/thrivecart
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-google-chat
+  label: Google Chat
+  partner: google-chat
+  partner_name: Google Chat
+  category: Google
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/google-chat
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-wordpress
+  label: WordPress
+  partner: wordpress
+  partner_name: WordPress
+  category: Website Builders
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/wordpress
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: fourthwall-ticktick
+  label: TickTick
+  partner_name: TickTick
+  category: Task Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/ticktick
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: fourthwall-keap
+  label: Keap
+  partner: keap
+  partner_name: Keap
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/fourthwall/integrations/keap
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
   arazzo: null
