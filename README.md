@@ -1,4 +1,4 @@
-# Fourthwall (fourthwall)
+# Fourthwall
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,223 +66,153 @@
 
 Fourthwall is a creator commerce platform for building a branded online shop and storefront, selling physical merch, digital products, memberships, and accepting donations and gifts. It exposes a public Storefront API (storefront token) for headless product/collection/cart experiences and a Platform / Open API (Basic Auth API key or OAuth) for managing orders, products, promotions, gifting, memberships, and webhooks.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/fourthwall/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/fourthwall/refs/heads/main/apis.yml)
+**Areas:** Creator Commerce · E-Commerce · Merch · Storefront · Membership · Donations · Print on Demand · Creator Economy
 
-## Tags
+## Fourthwall on APIs.io
 
-- Creator Commerce
-- Ecommerce
-- Merch
-- Storefront
-- Memberships
-- Donations
-- Print on Demand
+Everything profiled for Fourthwall is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/fourthwall/](https://apis.io/providers/fourthwall/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (12)
 
-- **Created:** 2026-07-01
-- **Modified:** 2026-07-01
+- [Fourthwall Collections API](https://apis.io/apis/fourthwall/fourthwall-collections-api/) — The Collections API from Fourthwall — 3 operation(s) for collections.
+- [Fourthwall Gifting API](https://apis.io/apis/fourthwall/fourthwall-gifting-api/) — The Gifting API from Fourthwall — 4 operation(s) for gifting.
+- [Fourthwall Giveaways API](https://apis.io/apis/fourthwall/fourthwall-giveaways-api/) — The Giveaways API from Fourthwall — 1 operation(s) for giveaways.
+- [Fourthwall Memberships API](https://apis.io/apis/fourthwall/fourthwall-memberships-api/) — The Memberships API from Fourthwall — 3 operation(s) for memberships.
+- [Fourthwall Orders API](https://apis.io/apis/fourthwall/fourthwall-orders-api/) — The Orders API from Fourthwall — 4 operation(s) for orders.
+- [Fourthwall Products API](https://apis.io/apis/fourthwall/fourthwall-products-api/) — The Products API from Fourthwall — 3 operation(s) for products.
+- [Fourthwall Promotions API](https://apis.io/apis/fourthwall/fourthwall-promotions-api/) — The Promotions API from Fourthwall — 2 operation(s) for promotions.
+- [Fourthwall Storefront Carts API](https://apis.io/apis/fourthwall/fourthwall-storefront-carts-api/) — The Storefront Carts API from Fourthwall — 5 operation(s) for storefront carts.
+- [Fourthwall Storefront Collections API](https://apis.io/apis/fourthwall/fourthwall-storefront-collections-api/) — The Storefront Collections API from Fourthwall — 3 operation(s) for storefront collections.
+- [Fourthwall Storefront Products API](https://apis.io/apis/fourthwall/fourthwall-storefront-products-api/) — The Storefront Products API from Fourthwall — 1 operation(s) for storefront products.
+- [Fourthwall Storefront Shop API](https://apis.io/apis/fourthwall/fourthwall-storefront-shop-api/) — The Storefront Shop API from Fourthwall — 1 operation(s) for storefront shop.
+- [Fourthwall Webhooks API](https://apis.io/apis/fourthwall/fourthwall-webhooks-api/) — The Webhooks API from Fourthwall — 3 operation(s) for webhooks.
 
-## APIs
+### Published properties
 
-### Fourthwall Storefront Products API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Public, storefront-token-authenticated read access to a shop's product (offer) catalog for building headless and custom storefronts, including fetching a product by slug.
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.fourthwall.com/storefront/overview](https://docs.fourthwall.com/storefront/overview)
-- **Base URL:** `https://storefront-api.fourthwall.com/v1`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [fourthwall](https://apis.io/servers/fourthwall/fourthwall/)
 
-- Storefront
-- Products
-- Offers
-- Catalog
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.fourthwall.com/storefront/overview)
-- [API Reference](https://docs.fourthwall.com/storefront-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Fourthwall Agentic Access](https://apis.io/agentic-access/fourthwall/fourthwall-agentic-access/)
 
-### Fourthwall Storefront Collections API
+#### Collections (13)
 
-Public storefront access to a shop's collections - list all collections, get a collection by slug, and list the products within a collection - plus shop information for headless commerce front ends.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://docs.fourthwall.com/storefront/overview](https://docs.fourthwall.com/storefront/overview)
-- **Base URL:** `https://storefront-api.fourthwall.com/v1`
+- [Fourthwall API](https://apis.io/collections/fourthwall/open-fourthwall/)
+- [Fourthwall Collections API](https://apis.io/collections/fourthwall/open-fourthwall-collections-api/)
+- [Fourthwall Collections Gifting API](https://apis.io/collections/fourthwall/open-fourthwall-gifting-api/)
+- [Fourthwall Collections Giveaways API](https://apis.io/collections/fourthwall/open-fourthwall-giveaways-api/)
+- [Fourthwall Collections Memberships API](https://apis.io/collections/fourthwall/open-fourthwall-memberships-api/)
+- [Fourthwall Collections Orders API](https://apis.io/collections/fourthwall/open-fourthwall-orders-api/)
+- [Fourthwall Collections Products API](https://apis.io/collections/fourthwall/open-fourthwall-products-api/)
+- [Fourthwall Collections Promotions API](https://apis.io/collections/fourthwall/open-fourthwall-promotions-api/)
+- [Fourthwall Collections Storefront Carts API](https://apis.io/collections/fourthwall/open-fourthwall-storefront-carts-api/)
+- [Fourthwall Collections Storefront Collections API](https://apis.io/collections/fourthwall/open-fourthwall-storefront-collections-api/)
+- [Fourthwall Collections Storefront Products API](https://apis.io/collections/fourthwall/open-fourthwall-storefront-products-api/)
+- [Fourthwall Collections Storefront Shop API](https://apis.io/collections/fourthwall/open-fourthwall-storefront-shop-api/)
+- [Fourthwall Collections Webhooks API](https://apis.io/collections/fourthwall/open-fourthwall-webhooks-api/)
 
-#### Tags
+#### Security (3)
 
-- Storefront
-- Collections
-- Catalog
+Authentication, trust centre, and vulnerability disclosure.
 
-#### Properties
+- [Fourthwall Authentication](https://apis.io/security/fourthwall/fourthwall-authentication/)
+- [Fourthwall Domain Security](https://apis.io/security/fourthwall/fourthwall-domain-security/)
+- [Fourthwall Vulnerability Disclosure](https://apis.io/security/fourthwall/fourthwall-vulnerability-disclosure/)
 
-- [Documentation](https://docs.fourthwall.com/storefront/overview)
-- [API Reference](https://docs.fourthwall.com/storefront-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### OAuth scopes (1)
 
-### Fourthwall Storefront Cart & Checkout API
+The permissions the API asks for.
 
-Create and manage a storefront cart (create, get, add, change quantity, remove items) then redirect the shopper to Fourthwall's hosted, PCI-compliant checkout to complete the purchase.
+- [Fourthwall Scopes](https://apis.io/scopes/fourthwall/fourthwall-scopes/)
 
-- **Human URL:** [https://docs.fourthwall.com/storefront/overview](https://docs.fourthwall.com/storefront/overview)
-- **Base URL:** `https://storefront-api.fourthwall.com/v1`
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Storefront
-- Cart
-- Checkout
+- [Fourthwall Plans Pricing](https://apis.io/plans/fourthwall/fourthwall-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://docs.fourthwall.com/storefront/overview)
-- [API Reference](https://docs.fourthwall.com/storefront-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Fourthwall Orders API
+- [Fourthwall Rate Limits](https://apis.io/rate-limits/fourthwall/fourthwall-rate-limits/)
 
-Platform (Open) API for retrieving a shop's orders - list all orders, get an order by id or friendly id, mark digital downloads as downloaded, and create fulfillments and external orders. Authenticated with a shop API key (Basic Auth) or OAuth.
+#### FinOps (1)
 
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
+What the API costs to run, by operation.
 
-#### Tags
+- [Fourthwall Finops](https://apis.io/finops/fourthwall/fourthwall-finops/)
 
-- Orders
-- Platform
-- Fulfillment
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Fourthwall Products API
-
-Platform API for managing products (offers), inventory, digital products, and collections - create, list, get, archive products, update availability and lifecycle state, and set the products in a collection.
-
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
-
-#### Tags
-
-- Products
-- Offers
-- Collections
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Fourthwall Gifting & Giveaways API
-
-Platform API for community gifting and giveaways - configure gifting, create gifting checkouts, run and finish gift draws, create and finish giveaways and giveaway links, and look up Twitch gift purchases.
-
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
-
-#### Tags
-
-- Gifting
-- Giveaways
-- Twitch
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Fourthwall Promotions API
-
-Platform API for shop promotions and discounts - create a promotion, list all promotions, get a promotion by id, and update an existing promotion.
-
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
-
-#### Tags
-
-- Promotions
-- Discounts
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Fourthwall Memberships API
-
-Platform API (BETA) for recurring memberships - list membership tiers, list members, and get an individual member. Subscription lifecycle changes are surfaced through webhooks (SUBSCRIPTION_PURCHASED / EXPIRED / CHANGED).
-
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
-
-#### Tags
-
-- Memberships
-- Subscriptions
-- Members
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Fourthwall Webhooks API
-
-Platform API for managing webhook subscriptions - create, list, get, update, and delete webhook configurations, and read delivered webhook events. Payloads are HMAC-SHA256 signed and cover order, product, donation, subscription, promotion, membership, and abandoned-cart events.
-
-- **Human URL:** [https://docs.fourthwall.com/open-api/](https://docs.fourthwall.com/open-api/)
-- **Base URL:** `https://api.fourthwall.com/open-api/v1.0`
-
-#### Tags
-
-- Webhooks
-- Events
-- Platform
-
-#### Properties
-
-- [Documentation](https://docs.fourthwall.com/open-api/)
-- [OpenAPI](openapi/fourthwall-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/fourthwall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/fourthwall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/FourthwallHQ)
-- [LinkedIn](https://www.linkedin.com/company/fourthwall)
 - [Website](https://fourthwall.com/)
 - [Documentation](https://docs.fourthwall.com)
-- [Plans](plans/fourthwall-plans-pricing.yml)
-- [Rate Limits](rate-limits/fourthwall-rate-limits.yml)
-- [Fin Ops](finops/fourthwall-finops.yml)
+- [Blog](https://fourthwall.com/blog)
+- [GitHub](https://github.com/FourthwallHQ)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.0** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 44.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 25.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 42.4** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/fourthwall/](https://apis.io/providers/fourthwall/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Fourthwall: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/fourthwall/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
